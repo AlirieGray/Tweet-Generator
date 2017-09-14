@@ -1,9 +1,9 @@
 import sys
 import re
 
-def histogram(source_text):
+def histogram_dict(source_text):
     word_frequencies = dict()
-    for word in source_text:
+    for word in source_text.split(' '):
         if word not in word_frequencies:
             word_frequencies[word] = 1
         else:
@@ -12,8 +12,26 @@ def histogram(source_text):
     #    print(element + " " + str(word_frequencies[element]))
     return word_frequencies
 
+def histogram_tuple(source_text):
+    # each tuple in this list has a word and then its frequency
+    list_of_tuples = []
+    for word in source_text.split(' '):
+        for word_tuple in list_of_tuples:
+            if word_tuple[0] == word:
+                word_tuple[1] += 1
+            else:
+                list_of_tuples.append((word, 1))
+
+
 def normalize(text):
-    pass
+    return_string = ' '.join(text)
+    return_string = re.sub(r'[0-9]+', '', return_string)
+    return_string = re.sub(r'[\]]+', '', return_string)
+    return_string = re.sub(r'[\[]+', '', return_string)
+    return_string = re.sub(r'[*]+', '', return_string)
+    return_string = re.sub(r'[-]+', '', return_string)
+    return_string = re.sub(r'[\"]+', '', return_string)
+    return return_string
 
 def unique_words(histogram):
     return len(histogram)
@@ -23,8 +41,12 @@ def frequency(word, histogram):
 
 if __name__ == '__main__':
     words = []
-    with open("freud.txt") as file:
+    with open('freud.txt') as file:
         for line in file:
             for word in line.split():
                 words.append(word)
-    print(histogram(words))
+
+    words = normalize(words)
+    histogram = (histogram_dict(words)) # a dictionary of word: frequency
+    print("The: " + frequency("The", histogram))
+    print("they: " + frequency("they", histogram))

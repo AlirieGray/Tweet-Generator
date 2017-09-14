@@ -6,3 +6,5 @@ red
 fish
 blue
 fish
+f1sh13
+fish[13]
