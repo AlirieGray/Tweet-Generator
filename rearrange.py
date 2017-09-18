@@ -27,11 +27,9 @@ def findAnagram(word):
             print(str)
             found.append(str)
 
-
 if __name__ == '__main__':
     # store command line arguments
-    words = sys.argv
-    words.pop(0)
+    words = sys.argv[1::]
 
     # scramble words
     print("\nScrambled words: ")
