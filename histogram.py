@@ -1,6 +1,7 @@
 import sys
 import re
 from datetime import datetime
+from operator import itemgetter
 
 # takes in a file name and returns a list of all words in the file
 def read_in_file(filename):
@@ -25,13 +26,26 @@ def create_dict(source_text):
             word_frequencies[word] += 1
     return word_frequencies
 
-# takes in a source text in string format and returns a list of tuples
-# in which the first element in each tuple is the word and the second
+# takes in a source text in string format and returns a list of lists
+# in which the first element in each sublist is the word and the second
 # element is its frequency in the source texts
 def create_list(source_text):
+    source = source_text.split(' ')
     word_frequencies = []
-    for word in source_text.split(' '):
-        pass
+    unique = []
+
+    for word in source:
+        if word not in unique:
+            word_frequencies.append([word, 1])
+            unique.append(word)
+        else:
+            # get list of all first indexes (words)
+            # find the index of the word in that list
+            # it will also be the word's index in word_frequencies
+            all_words = list(map(itemgetter(0), word_frequencies))
+            i = all_words.index(word)
+            word_frequencies[i][1] += 1
+    return(word_frequencies)
 
 # takes a list of string and returns it as a
 # lower-case string with digits and special characters removed
@@ -46,10 +60,10 @@ def normalize(text):
     return_string = re.sub(r'[-]+', ' ', return_string)
     return_string = re.sub(r'[_]+', '', return_string)
     return_string = re.sub(r'[\"]+', '', return_string)
-    return_string = re.sub(r'[,]+', ' ', return_string)
-    return_string = re.sub(r'[.]+', ' ', return_string)
-    return_string = re.sub(r'[;]+', ' ', return_string)
-    return_string = re.sub(r'[?]+', ' ', return_string)
+    return_string = re.sub(r'[,]+', '', return_string)
+    return_string = re.sub(r'[.]+', '', return_string)
+    return_string = re.sub(r'[;]+', '', return_string)
+    return_string = re.sub(r'[?]+', '', return_string)
     return return_string.lower()
 
 # returns the number of unique words in the histogram
@@ -61,7 +75,9 @@ def frequency(word, histogram):
     if(type(histogram) is dict):
         return histogram[word]
     elif(type(histogram) is list):
-        pass
+        all_words = list(map(itemgetter(0), histogram))
+        i = all_words.index(word)
+        return histogram[i][1]
 
 def write_histogram_file(hist, new_file):
     with open(new_file, 'w') as f:
@@ -69,15 +85,28 @@ def write_histogram_file(hist, new_file):
             f.write("%s %d \n" % (key, hist[key]))
 
 if __name__ == '__main__':
-    # testing
-    start = datetime.now()
     words = read_in_file('freud.txt')
     words = normalize(words)
-    histogram = (create_dict(words)) # a dictionary of word: frequency
-    write_histogram_file(histogram, 'freud_histogram.txt')
-    print("Time: " + str(datetime.now() - start))
+
+    # testing
+    start = datetime.now()
+    histogram_dict = (create_dict(words)) # a dictionary of word: frequency
+    print("Time to create dictionary: " + str(datetime.now() - start))
+    start = datetime.now()
+    print("The: " + str(frequency("the", histogram_dict)))
+    print("Time to find frequency of word in dictionary: " + str(datetime.now() - start))
+
+    start = datetime.now()
+    histogram_list = (create_list(words)) # a dictionary of word: frequency
+    print("Time to create list: " + str(datetime.now() - start))
+    start = datetime.now()
+    print("The: " + str(frequency("the", histogram_list)))
+    print("Time to find frequency of word in list: " + str(datetime.now() - start))
+
+
+    #write_histogram_file(histogram, 'freud_histogram.txt')
     '''
-    print(histogram)
+    print(histogram_dict)
     print("Unique words: " + str(unique_words(histogram)))
     print("The: " + str(frequency("the", histogram)))
     print("Pathological: " + str(frequency("pathological", histogram)))
