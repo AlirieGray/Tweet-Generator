@@ -6,7 +6,7 @@ from operator import itemgetter
 # takes in a file name and returns a list of all words in the file
 def read_in_file(filename):
     words = []
-    with open('freud.txt') as file:
+    with open(filename) as file:
         for line in file:
             for word in line.split():
                 words.append(word)
@@ -58,12 +58,14 @@ def normalize(text):
     return_string = re.sub(r'[\)]+', '', return_string)
     return_string = re.sub(r'[*]+', '', return_string)
     return_string = re.sub(r'[-]+', ' ', return_string)
-    return_string = re.sub(r'[_]+', '', return_string)
+    return_string = re.sub(r'[_*]+', '', return_string)
     return_string = re.sub(r'[\"]+', '', return_string)
     return_string = re.sub(r'[,]+', '', return_string)
     return_string = re.sub(r'[.]+', '', return_string)
     return_string = re.sub(r'[;]+', '', return_string)
     return_string = re.sub(r'[?]+', '', return_string)
+
+    # return_string = re.sub('[^a-zA-Z]+', '', return_string)
     return return_string.lower()
 
 # returns the number of unique words in the histogram
@@ -79,6 +81,8 @@ def frequency(word, histogram):
         i = all_words.index(word)
         return histogram[i][1]
 
+# take in a histogram in dictionary format and writes a new file with each
+# word and its frequency on a new line
 def write_histogram_file(hist, new_file):
     with open(new_file, 'w') as f:
         for key in hist.keys():
