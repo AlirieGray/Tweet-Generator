@@ -2,7 +2,6 @@ import histogram
 import random
 from operator import itemgetter
 from datetime import datetime
-from flask import Flask
 
 # takes in a histogram and returns a random word from it
 def random_word(hist):
@@ -46,7 +45,7 @@ def create_probs_list(prob_dict):
         return_list.append([item, range_list])
     return return_list
 
-def random_weighted_two(probs_list):
+def random_weighted(probs_list):
     random_probability = random.random() # [0, 1)
     for pair in probs_list:
         if random_probability >= pair[1][0] and random_probability < pair[1][1]:
@@ -76,12 +75,13 @@ def testing(hist):
     #testing method two
     output = []
     for i in range (reps):
-        output.append(random_weighted_two(probs_list))
+        output.append(random_weighted(probs_list))
     new_hist = histogram.create_dict(" ".join(output))
     generated_probs = probability_dictionary(new_hist)
     print(generated_probs)
 
     print("Time: " + str(datetime.now() - start))
+
 
 if __name__ == '__main__':
     normalized_string = (histogram.normalize(histogram.read_in_file('fish.txt')))
