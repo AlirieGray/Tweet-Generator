@@ -1,3 +1,1 @@
 Flask==0.8
-operator
-datetime
