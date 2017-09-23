@@ -46,7 +46,6 @@ def create_list(source_text):
             i = all_words.index(word)
             word_frequencies[i][1] += 1
     return(word_frequencies)
-
 # takes a list of string and returns it as a
 # lower-case string with digits and special characters removed
 def normalize(text):
