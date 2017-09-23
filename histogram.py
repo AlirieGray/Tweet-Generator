@@ -57,6 +57,7 @@ def normalize(text):
     return_string = re.sub(r'[\)]+', '', return_string)
     return_string = re.sub(r'[*]+', '', return_string)
     return_string = re.sub(r'[-]+', ' ', return_string)
+    return_string = re.sub(r'[\']+', ' ', return_string)
     return_string = re.sub(r'[_*]+', '', return_string)
     return_string = re.sub(r'[\"]+', '', return_string)
     return_string = re.sub(r'[,]+', '', return_string)
