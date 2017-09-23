@@ -7,8 +7,7 @@ app = Flask(__name__)
 def hello():
     normalized_string = (histogram.normalize(histogram.read_in_file('blue.txt')))
     blue_words = histogram.create_dict(normalized_string)
-    blue_probs = stochastic.probability_dictionary(blue_words)
-    probs_list = stochastic.create_probs_list(blue_probs)
+    probs_list = stochastic.create_ranges_list(blue_words)
     return_list = []
     for i in range(10):
         return_list.append(stochastic.random_weighted(probs_list))
