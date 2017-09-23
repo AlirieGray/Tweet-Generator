@@ -13,7 +13,7 @@ def hello():
     for i in range(num):
         return_list.append(stochastic.random_weighted(probs_list))
     tweet =  " ".join(return_list)
-    return render_template('index.html', tweet = tweet)
+    return render_template('index.html', tweet = tweet, url = "{{ url_for('static',filename='styles/style.css') }}")
 
 if __name__ == "__main__":
     app.run()
