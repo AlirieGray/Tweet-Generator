@@ -3,7 +3,7 @@ import stochastic
 import histogram
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def hello():
     num = request.args.get('num', default = 10, type = int)
     normalized_string = (histogram.normalize(histogram.read_in_file('blue.txt')))
