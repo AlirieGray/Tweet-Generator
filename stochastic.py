@@ -1,38 +1,11 @@
 import histogram
 import random
-from operator import itemgetter
-from datetime import datetime
+import operator
+import datetime
 
 # takes in a histogram and returns a random word from it
 def random_word(hist):
     return random.choice(list(hist.keys()))
-
-# returns a random word from the histogram, weighted by frequency
-def random_weighted_one(hist):
-    # first take a random sample of key/value pairs
-    # and add them to a list
-    words = []
-    for i in range (3):
-        new_word = random_word(hist)
-        words.append(new_word)
-
-    # whichever has the highest frequency/probability in the histogram
-    # (may be a tie) return that word
-    current = 0
-    max_word = ""
-    '''
-    for word in words:
-        if histogram.frequency(word, hist) > current:
-            current = histogram.frequency(word, hist)
-            max_word = word
-    '''
-    # alternatively
-    probs = probability_dictionary(hist)
-    for word in words:
-        if probs[word] > current:
-            current = probs[word]
-            max_word = word
-    return max_word
 
 def create_probs_list(prob_dict):
     return_list = []
