@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello():
-    '''
     num = request.args.get('num', default = 10, type = int)
     normalized_string = (histogram.normalize(histogram.read_in_file('blue.txt')))
     blue_words = histogram.create_dict(normalized_string)
@@ -13,9 +12,8 @@ def hello():
     return_list = []
     for i in range(num):
         return_list.append(stochastic.random_weighted(probs_list))
-    return " ".join(return_list)
-    '''
-    return render_template('index.html')
+    tweet =  " ".join(return_list)
+    return render_template('index.html', tweet = tweet)
 
 if __name__ == "__main__":
     app.run()
