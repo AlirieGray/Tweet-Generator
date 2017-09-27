@@ -8,9 +8,9 @@ from datetime import datetime
 # first a word, and then a list with the start and end numbers of
 # that word's "range" on the number line, based on its probability
 def create_ranges_list(prob_dict):
-    return_list = []
+    return_list = [] # TODO variable naming
     current = 0
-    for item in prob_dict:
+    for item in prob_dict: #TODO explain loop
         range_list = []
         range_list.append(current)
         current += prob_dict[item]
@@ -22,7 +22,8 @@ def create_ranges_list(prob_dict):
 # a random word from the list, weighted by probability
 def random_weighted(probs_list):
     random_probability = random.random() # [0, 1)
-    for pair in probs_list:
+    #TODO explain loop
+    for pair in probs_list: # TODO vairable for pair[1]
         if random_probability >= pair[1][0] and random_probability < pair[1][1]:
             return pair[0]
 

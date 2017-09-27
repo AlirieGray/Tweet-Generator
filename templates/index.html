@@ -9,15 +9,12 @@
 <body>
   <div class="container">
     <p> {{tweet}} </p>
-    <form method="get" action="/">
-      <input type="submit" value="generate_tweet">
+    <form action="/">
+      <button class="btn" formmethod="get"> Generate Tweet </button>
+      <button class="btn" formmethod="post"> Favorite </button>
+      <button class="btn" formmethod="get" formaction="/favorites"> See All Favorites </button>
     </form>
-    <form method="post" action="/">
-      <input type="submit" value="favorite">
-    </form>
-    <form method="get" action="/favorites">
-      <input type="submit" value="see all favorites">
-    </form>
+
   </div>
 </body>
 

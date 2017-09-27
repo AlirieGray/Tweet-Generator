@@ -3,8 +3,10 @@ import re
 from datetime import datetime
 from operator import itemgetter
 
+#TODO histogram class
+
 # takes in a file name and returns a list of all words in the file
-def read_in_file(filename):
+def read_in_file(filename): # TODO can normalize string in this function
     words = []
     with open(filename) as file:
         for line in file:
@@ -12,23 +14,7 @@ def read_in_file(filename):
                 words.append(word)
     return words
 
-# takes in a source text in string format and returns a dictionary
-# in which each key is a unique word and its value is that word's
-# probability of occurring in the source text
-def create_dict(source_text):
-    word_frequencies = dict()
-    words_list = source_text.split(' ')
-    total = len(words_list)
-    for word in words_list:
-        # if the word has not been added to the dictionary yet, add it
-        # otherwise, increment its value (frequency)
-        if word not in word_frequencies:
-            word_frequencies[word] = (1 / total)
-        else:
-            word_frequencies[word] += (1 / total)
-    return word_frequencies
-
-# takes a list of string and returns it as a
+# takes a list of strings and returns it as a
 # lower-case string with digits and special characters removed
 def normalize(text):
     return_string = ' '.join(text)
@@ -46,6 +32,22 @@ def normalize(text):
     return_string = re.sub(r'[;]+', '', return_string)
     return_string = re.sub(r'[?]+', '', return_string)
     return return_string.lower()
+
+# takes in a source text in string format and returns a dictionary
+# in which each key is a unique word and its value is that word's
+# probability of occurring in the source text
+def create_dict(source_text):
+    word_frequencies = dict()
+    words_list = source_text.split(' ')
+    total = len(words_list)
+    for word in words_list:
+        # if the word has not been added to the dictionary yet, add it
+        # otherwise, increment its value (frequency)
+        if word not in word_frequencies:
+            word_frequencies[word] = (1 / total)
+        else:
+            word_frequencies[word] += (1 / total)
+    return word_frequencies
 
 # returns the number of unique words in the histogram
 def unique_words(histogram):
