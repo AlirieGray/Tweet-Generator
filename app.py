@@ -8,6 +8,7 @@ import time
 import json
 app = Flask(__name__, instance_relative_config=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 blue_dictogram = Dictogram('blue.txt')
@@ -39,7 +40,6 @@ def fav():
     # try to get content of tweets in db
     tweets_list = Tweet.query.all()
     tweet_strings = []
-    print("Printing all content")
     for tweet in tweets_list:
         tweet_strings.append(tweet.content)
     return render_template('favorites.html', tweets=tweet_strings)
