@@ -26,7 +26,7 @@ class Tweet(db.Model):
 def hello():
     if request.method == 'GET':
         num = request.args.get('num', default = 15, type = int)
-        tweet =  blue_dictogram.generate_sentence(num)
+        tweet = blue_dictogram.generate_sentence(num)
         global currentTweet
         currentTweet = tweet
         return render_template('index.html', tweet=tweet, time=time.time)
