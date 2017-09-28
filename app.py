@@ -1,16 +1,16 @@
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 import stochastic
-import histogram
+from dictogram import Dictogram
+from histogram import Histogram
+import util
 import time
 import json
 app = Flask(__name__, instance_relative_config=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 db = SQLAlchemy(app)
 
-normalized_string = (histogram.normalize(histogram.read_in_file('blue.txt')))
-blue_words = histogram.create_dict(normalized_string)
-probs_list = stochastic.create_ranges_list(blue_words)
+blue_dictogram = Dictogram('blue.txt')
 
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -26,11 +26,7 @@ class Tweet(db.Model):
 def hello():
     if request.method == 'GET':
         num = request.args.get('num', default = 15, type = int)
-        return_list = []
-
-        for i in range(num):
-            return_list.append(stochastic.random_weighted(probs_list))
-        tweet =  " ".join(return_list)
+        tweet =  blue_dictogram.generate_sentence(num)
         global currentTweet
         currentTweet = tweet
         return render_template('index.html', tweet=tweet, time=time.time)

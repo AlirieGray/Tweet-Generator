@@ -20,10 +20,10 @@ def create_ranges_list(prob_dict):
 
 # takes in a list of words and its associated probability range and returns
 # a random word from the list, weighted by probability
-def random_weighted(probs_list):
-    random_probability = random.random() # [0, 1)
+def random_weighted(probs_dict):
+    random_probability = random.random()
     #TODO explain loop
-    for pair in probs_list: # TODO vairable for pair[1]
+    for pair in probs_dict: # TODO variable for pair[1]
         if random_probability >= pair[1][0] and random_probability < pair[1][1]:
             return pair[0]
 
