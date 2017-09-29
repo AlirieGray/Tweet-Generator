@@ -1,17 +1,16 @@
-
 from histogram import Histogram
 import stochastic
 import util
 import re
 import random
 
-class Dictogram: # should inherit from dict, can use built-ins
+## current issues: gets stuck in loop, repeats sentences directly from source ##
+
+class Dictogram(dict):
     def __init__(self, source_text_file=None):
         self.start_words = []
         self.end_words = []
-        if source_text_file is None:
-            self.probs = dict()
-        else:
+        if source_text_file:
             # first, read in the file and normalize the string
             list_of_words = util.read_in_file(source_text_file)
             normal_list = util.normalized_list(list_of_words)
@@ -39,11 +38,10 @@ class Dictogram: # should inherit from dict, can use built-ins
                             dictogram[word].probability_dictionary[normal_list[i + 1]] += 1
             return_ranges = dict()
             for key, value in dictogram.items():
-                return_ranges[key] = stochastic.create_ranges_list(value.probability_dictionary)
-            self.probs = return_ranges
+                self[key] = stochastic.create_ranges_list(value.probability_dictionary)
 
     def print_self():
-        for key, value in self.probs.items():
+        for key, value in self.items():
             print(key)
             print(list(value.keys()))
 
@@ -58,7 +56,7 @@ class Dictogram: # should inherit from dict, can use built-ins
             # randomly pick a word from the words that follow the current word
             next_word = ''
             while next_word == '':
-                next_word = stochastic.random_weighted(self.probs[current_word])
+                next_word = stochastic.random_weighted(self[current_word])
             generated.append(next_word)
             current_word = next_word
             #if next_word in self.end_words:

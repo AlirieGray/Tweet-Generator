@@ -8,14 +8,18 @@ from datetime import datetime
 # first a word, and then a list with the start and end numbers of
 # that word's "range" on the number line, based on its probability
 def create_ranges_list(prob_dict):
-    return_list = [] # TODO variable naming
+    return_list = []
     current = 0
-    for item in prob_dict: #TODO explain loop
+    for word in prob_dict:
         range_list = []
+        # add beginning of the range to the ranges sublist
         range_list.append(current)
-        current += prob_dict[item]
+        # add the probability of the current word to get the end of the range
+        current += prob_dict[word]
+        # then add the end of the range as the second element in the ranges sublist
         range_list.append(current)
-        return_list.append([item, range_list])
+        # add a sublist with the word and its probability range
+        return_list.append([word, range_list])
     return return_list
 
 # takes in a list of words and its associated probability range and returns
