@@ -14,7 +14,7 @@ class Histogram(dict):
             for word in words_list:
                 # if the word has not been added to the dictionary yet, add it
                 # otherwise, increment its value (frequency)
-                if word not in word_frequencies:
+                if word not in self:
                     self[word] = (1 / total)
                 else:
                     self[word] += (1 / total)
@@ -30,3 +30,9 @@ class Histogram(dict):
             self[word] = 1
         else:
             self[word] += 1
+
+if __name__ == '__main__':
+    # calculate time to create a histogram
+    start = datetime.now()
+    test_hist = Histogram('blue.txt')
+    print("Time: " + str(datetime.now() - start))

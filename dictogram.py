@@ -1,8 +1,8 @@
 from histogram import Histogram
-import stochastic
 import util
 import re
 import random
+from datetime import datetime
 
 ## current issues: gets stuck in loop, repeats sentences directly from source ##
 
@@ -38,7 +38,7 @@ class Dictogram(dict):
                             dictogram[word][normal_list[i + 1]] += 1
             return_ranges = dict()
             for key, value in dictogram.items():
-                self[key] = stochastic.create_ranges_list(value)
+                self[key] = util.create_ranges_list(value)
 
     def print_self():
         for key, value in self.items():
@@ -56,7 +56,7 @@ class Dictogram(dict):
             # randomly pick a word from the words that follow the current word
             next_word = ''
             while next_word == '':
-                next_word = stochastic.random_weighted(self[current_word])
+                next_word = util.random_weighted(self[current_word])
             generated.append(next_word)
             current_word = next_word
             #if next_word in self.end_words:
@@ -64,7 +64,9 @@ class Dictogram(dict):
         return(" ".join(generated))
 
 if __name__ == '__main__':
+    start = datetime.now()
     blue = Dictogram('blue.txt')
-    # print(blue.start_words)
-    #blue.print_self()
+    print("Time to create Dictogram: " + str(datetime.now() - start))
     print(blue.generate_sentence(10))
+    start = datetime.now()
+    print("Time to generate 10-word sentence: " + str(datetime.now() - start))

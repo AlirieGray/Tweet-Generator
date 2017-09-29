@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
-import stochastic
 from dictogram import Dictogram
 from histogram import Histogram
 import util
