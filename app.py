@@ -27,6 +27,7 @@ def hello():
     if request.method == 'GET':
         num = request.args.get('num', default = 15, type = int)
         tweet = blue_dictogram.generate_sentence(num)
+        # keep track of the current tweet in case a user favorites it
         global currentTweet
         currentTweet = tweet
         return render_template('index.html', tweet=tweet, time=time.time)
@@ -43,12 +44,14 @@ def fav():
         tweet_strings.append(tweet.content)
     return render_template('favorites.html', tweets=tweet_strings)
 
+# add favorited tweet to the database
 def addFavoriteTweet(tweet_content):
     tweet = Tweet(tweet_content)
     db.session.add(tweet)
     db.session.commit()
     print(Tweet.query.all())
 
+# empty the database
 def clear_data(session):
     meta = db.metadata
     for table in reversed(meta.sorted_tables):

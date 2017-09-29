@@ -6,35 +6,16 @@ from operator import itemgetter
 from datetime import datetime
 
 #### UTILIY FUNCTIONS ####
-## TODO: deal with empty strings in normalized string
+## TODO: deal with empty strings in normalized list
 
 # takes in a file name and returns a list of all words in the file
-def read_in_file(filename): # TODO can normalize string in this function
+def read_in_file(filename): # TODO can normalize string in this function (?)
     words = []
     with open(filename) as file:
         for line in file:
             for word in line.split():
                 words.append(word)
     return words
-
-# takes a list of strings and returns it as a
-# lower-case string with digits and special characters removed
-def normalize(text):
-    return_string = ' '.join(text)
-    return_string = re.sub(r'[0-9]+', '', return_string)
-    return_string = re.sub(r'[\]]+', '', return_string)
-    return_string = re.sub(r'[\[]+', '', return_string)
-    return_string = re.sub(r'[\(]+', '', return_string)
-    return_string = re.sub(r'[\)]+', '', return_string)
-    return_string = re.sub(r'[*]+', '', return_string)
-    return_string = re.sub(r'[\']+', ' ', return_string)
-    return_string = re.sub(r'[_*]+', '', return_string)
-    return_string = re.sub(r'[\"]+', '', return_string)
-    return_string = re.sub(r'[,]+', '', return_string)
-    #return_string = re.sub(r'[.]+', '', return_string)
-    return_string = re.sub(r'[;]+', '', return_string)
-    return_string = re.sub(r'[?]+', '', return_string)
-    return return_string.lower()
 
 def normalized_list(text):
     return_string = ' '.join(text)
