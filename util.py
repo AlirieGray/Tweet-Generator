@@ -2,6 +2,7 @@ import sys
 import re
 
 #### UTILIY FUNCTIONS ####
+## TODO: deal with empty strings in normalized string
 
 # takes in a file name and returns a list of all words in the file
 def read_in_file(filename): # TODO can normalize string in this function

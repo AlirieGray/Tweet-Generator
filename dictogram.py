@@ -31,14 +31,14 @@ class Dictogram(dict):
                         # is not already in the dictogram under the current word's
                         # histogram, then add it to the current word's histrogram
                         # and make its value 1
-                        if normal_list[i + 1] not in dictogram[word].probability_dictionary.keys():
-                            dictogram[word].probability_dictionary[normal_list[i + 1]] = 1
+                        if normal_list[i + 1] not in dictogram[word].keys():
+                            dictogram[word][normal_list[i + 1]] = 1
                             # otherwise, increment its value in the current word's histogram
                         else:
-                            dictogram[word].probability_dictionary[normal_list[i + 1]] += 1
+                            dictogram[word][normal_list[i + 1]] += 1
             return_ranges = dict()
             for key, value in dictogram.items():
-                self[key] = stochastic.create_ranges_list(value.probability_dictionary)
+                self[key] = stochastic.create_ranges_list(value)
 
     def print_self():
         for key, value in self.items():
@@ -65,6 +65,6 @@ class Dictogram(dict):
 
 if __name__ == '__main__':
     blue = Dictogram('blue.txt')
-    print(blue.start_words)
+    # print(blue.start_words)
     #blue.print_self()
     print(blue.generate_sentence(10))
