@@ -1,11 +1,8 @@
 .container {
   width: calc(100% - 4em);
   max-width: 500px;
-  margin: auto;
-}
-
-.tweet {
-    text-align: center;
+  display: flex;
+  background-color: black;
 }
 
 p {

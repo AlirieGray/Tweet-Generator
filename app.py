@@ -11,6 +11,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 blue_dictogram = Dictogram('blue.txt')
+#print(blue_dictogram['big'])
 
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)

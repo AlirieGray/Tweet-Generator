@@ -1,6 +1,5 @@
 import sys
 import re
-import histogram
 import random
 from operator import itemgetter
 from datetime import datetime
@@ -38,8 +37,8 @@ def normalized_list(text):
 # word and its frequency on a new line
 def write_histogram_file(hist, new_file):
     with open(new_file, 'w') as f:
-        for key in hist.probability_dictionary.keys():
-            f.write("%s %d \n" % (key, hist.probability_dictionary[key]))
+        for key in hist:
+            f.write("%s %d \n" % (key, hist[key]))
 
 # takes in a probability dictionary and returns a structure
 # in which every item is a list with two elements:
@@ -61,12 +60,14 @@ def create_ranges_list(prob_dict):
 # takes in a list of words and its associated probability range and returns
 # a random word from the list, weighted by probability
 def random_weighted(probs_dict):
-    # get a random float between 0 and 1
-    random_prob = random.random()
+    #tokens = ???
+    # get a random integer between 0 and tokens - 1s
+    random_prob = random.randint(1, probs_dict[len(probs_dict) - 1][1][1])  # die: 0-5
+    # random_prob = random.randint(1, tokens)  # die: 1-6
     for pair in probs_dict:
         prob_range = pair[1]
         # iterate through the probability dictionary until we reach a word
         # whose probability range contains the randomly generated float
         # and then return that word
-        if random_prob >= prob_range[0] and random_prob < prob_range[1]:
+        if random_prob > prob_range[0] and random_prob <= prob_range[1]:
             return pair[0]
