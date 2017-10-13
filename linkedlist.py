@@ -154,6 +154,20 @@ class LinkedList(object):
                 return current.data
             current = current.next
 
+    def iterate(self):
+        """Iterates from the head of the list"""
+        current = self.head
+        while current:
+            yield current
+            current = current.next
+
+    def getElementAt(self, index):
+        """Returns the data at a specific index"""
+        current = self.head
+        for i in range(index):
+            current = current.next
+        return current.data
+
 def test_linked_list():
     ll = LinkedList()
     print(ll)
@@ -167,8 +181,12 @@ def test_linked_list():
     print(ll)
     print('head: ' + str(ll.head))
     print('second element: ' + str(ll.head.next))
+    print('third element (tail): ' + str(ll.head.next.next))
     print('tail: ' + str(ll.tail))
     print('length: ' + str(ll.length()))
+
+    for i in ll.iterate():
+        print("Iterating " + i.data)
 
     # Enable this after implementing delete:
     print('Deleting items:')
