@@ -19,15 +19,15 @@ def read_in_file(filename): # TODO can normalize string in this function (?)
 def normalized_list(text):
     return_string = ' '.join(text)
     return_string = re.sub(r'[0-9]+', '', return_string)
-    return_string = re.sub(r'[\]]+', '', return_string)
-    return_string = re.sub(r'[\[]+', '', return_string)
-    return_string = re.sub(r'[\(]+', '', return_string)
-    return_string = re.sub(r'[\)]+', '', return_string)
+    #return_string = re.sub(r'[\]]+', '', return_string)
+    #return_string = re.sub(r'[\[]+', '', return_string)
+    #return_string = re.sub(r'[\(]+', '', return_string)
+    #return_string = re.sub(r'[\)]+', '', return_string)
     return_string = re.sub(r'[*]+', '', return_string)
     return_string = re.sub(r'[\']+', ' ', return_string)
     return_string = re.sub(r'[_*]+', '', return_string)
     return_string = re.sub(r'[\"]+', '', return_string)
-    return_string = re.sub(r'[,]+', '', return_string)
+    #return_string = re.sub(r'[,]+', '', return_string)
     #return_string = re.sub(r'[.]+', '', return_string)
     return_string = re.sub(r'[;]+', '', return_string)
     return_string = re.sub(r'[?]+', '', return_string)
@@ -62,6 +62,7 @@ def create_ranges_list(prob_dict):
 def random_weighted(probs_dict):
     #tokens = ???
     # get a random integer between 0 and tokens - 1s
+    ## TODO: why does this hang up???? ##
     random_prob = random.randint(1, probs_dict[len(probs_dict) - 1][1][1])  # die: 0-5
     # random_prob = random.randint(1, tokens)  # die: 1-6
     for pair in probs_dict:

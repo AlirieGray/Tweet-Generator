@@ -25,6 +25,12 @@ class Dictogram(dict):
                 if word not in dictogram:
                     dictogram[word] = Histogram()
                 if (i < len(normal_list) - 1):
+                    # instead of this:
+                    # put a [START] and [STOP] token in the normalized list itself
+                    # and then when we get stop, we can just break
+                    # and we'll have a chance of not ending even if we get a word
+                    # that sometimes ends a sentence, if it also sometimes doesn't
+                    # end a sentence
                     if word.endswith(".") and word not in self.end_words:
                         #word = re.sub(r'[.]+', '', word)
                         self.end_words.append(word)
@@ -54,7 +60,7 @@ class Dictogram(dict):
         while start == '':
             start = random.choice(self.start_words)
         current_word = start
-        generated.append(start)
+        generated.append(start.title())
         while (len(generated) < sentence_length):
             # randomly pick a word from the words that follow the current word
             next_word = ''

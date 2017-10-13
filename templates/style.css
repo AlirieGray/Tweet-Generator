@@ -2,9 +2,4 @@
   width: calc(100% - 4em);
   max-width: 500px;
   display: flex;
-  background-color: black;
-}
-
-p {
-  color: red;
 }
