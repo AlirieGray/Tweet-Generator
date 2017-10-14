@@ -102,7 +102,7 @@ class LinkedList(object):
 
         # if the list is empty, exit the function (constant time to check head node)
         if self.head is None:
-            raise ValueError("List is empty");
+            raise ValueError("List is empty")
             return
 
         # if the head is the item we are looking for, reassign the head pointer
@@ -155,14 +155,14 @@ class LinkedList(object):
             current = current.next
 
     def iterate(self):
-        """Iterates from the head of the list"""
+        """Iterate from the head of the list"""
         current = self.head
         while current:
-            yield current
+            yield current.data
             current = current.next
 
     def getElementAt(self, index):
-        """Returns the data at a specific index"""
+        """Return the data at a specific index"""
         current = self.head
         for i in range(index):
             current = current.next
