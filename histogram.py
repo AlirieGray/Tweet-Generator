@@ -10,14 +10,14 @@ class Histogram(dict):
     def __init__(self, source_text_string=None):
         if source_text_string:
             words_list = source_text_string.split(' ')
-            total = len(words_list)
+            # total = len(words_list)
             for word in words_list:
                 # if the word has not been added to the dictionary yet, add it
                 # otherwise, increment its value (frequency)
                 if word not in self:
-                    self[word] = (1 / total)
+                    self[word] = 1
                 else:
-                    self[word] += (1 / total)
+                    self[word] += 1
 
     # returns the probability of a given word in the histogram
     def probability(word):
@@ -25,7 +25,7 @@ class Histogram(dict):
         i = all_words.index(word)
         return self[i][1]
 
-    def add(word):
+    def add(self, word):
         if word not in self:
             self[word] = 1
         else:

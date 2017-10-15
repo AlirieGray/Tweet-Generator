@@ -47,10 +47,10 @@ class Dictogram(dict):
             for key, value in dictogram.items():
                 self[key] = util.create_ranges_list(value)
 
-    def print_self():
+    def print_self(self):
         for key, value in self.items():
             print(key)
-            print(list(value.keys()))
+            print(value)
 
     def generate_sentence(self, sentence_length):
         # pick a random start word
@@ -92,8 +92,20 @@ class SecondOrderDictogram(dict):
                         first = second
                     second = Q.dequeue()
                     window = (first, second)
-                    print(str(window) + Q.peek())
+                    print(str(window) + " " + Q.peek())
 
+                    if window in self:
+                        self[window].add(Q.peek())
+                    else:
+                        self[window] = Histogram()
+
+    def print_self(self):
+        for key, value in self.items():
+            print(key)
+            print(value)
+
+    def generate_sentence(self):
+        pass
 
 
 if __name__ == '__main__':
@@ -107,6 +119,8 @@ if __name__ == '__main__':
 
     # test second-order Markov chain
     fish = SecondOrderDictogram('fish.txt')
+    print()
+    fish.print_self()
 
 
 
