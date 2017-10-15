@@ -5,12 +5,16 @@ import random
 from datetime import datetime
 from queue import Queue
 
+# TODO: increase probability of end-sentence token the longer the
+#   generated sentence grows
+# TODO: histogram in SecondOrderDictogram value is now a LISTogram,
+#   treat it accordingly !
+
 class Dictogram(dict):
     def __init__(self, source_text_file=None):
         self.start_words = []
         self.end_words = []
-        self.types = 0  # the number of distinct item types in this histogram
-        self.tokens = 0  # the total count of all item tokens in this histogram
+
         if source_text_file:
             # first, read in the file and normalize the string
             list_of_words = util.read_in_file(source_text_file)
@@ -73,8 +77,6 @@ class Dictogram(dict):
 
 class SecondOrderDictogram(dict):
     def __init__(self, source_text_file=None):
-        self.types = 0  # the number of distinct item types in this histogram
-        self.tokens = 0  # the total count of all item tokens in this histogram
         if source_text_file:
             # first, read in the file and normalize the string
             list_of_words = util.read_in_file(source_text_file)

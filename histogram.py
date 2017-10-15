@@ -3,33 +3,59 @@ import re
 from datetime import datetime
 from operator import itemgetter
 
-class Histogram(dict):
-    # takes in a source text in string format and returns a dictionary
-    # in which each key is a unique word and its value is that word's
-    # probability of occurring in the source text
-    def __init__(self, source_text_string=None):
-        if source_text_string:
-            words_list = source_text_string.split(' ')
-            # total = len(words_list)
-            for word in words_list:
-                # if the word has not been added to the dictionary yet, add it
-                # otherwise, increment its value (frequency)
-                if word not in self:
-                    self[word] = 1
-                else:
-                    self[word] += 1
+class Histogram(list):
 
-    # returns the probability of a given word in the histogram
-    def probability(word):
-        all_words = list(map(itemgetter(0), self))
-        i = all_words.index(word)
-        return self[i][1]
+    def __init__(self, iterable=None):
+        """Initialize this histogram as a new list; update with given items"""
+        super(Listogram, self).__init__()
+        self.types = 0  # the number of distinct item types in this histogram
+        self.tokens = 0  # the total count of all item tokens in this histogram
+        if iterable:
+            self.update(iterable)
 
-    def add(self, word):
-        if word not in self:
-            self[word] = 1
-        else:
-            self[word] += 1
+    def update(self, iterable):
+        """Update this histogram with the items in the given iterable"""
+
+        # go through every item in the list to be added
+        # each one is a new token
+        for item in iterable:
+            self.tokens += 1
+            found = False
+            # check each tuple in the Listogram
+            for index, tup in enumerate(self):
+                # if the first item in the tuple is the word we are adding
+                # just update its count (the second index in the tuple)
+                # and early exit
+                if tup[0] == item:
+                    current = tup[1]
+                    self[index] = (item, current + 1)
+                    found = True
+            # otherwise, if we didn't find the item already in the Listogram
+            # then just append it and increment the types count
+            if not found:
+                self.append((item, 1))
+                self.types += 1
+
+
+    def count(self, item):
+        """Return the count of the given item in this histogram, or 0"""
+        for tup in self:
+            if tup[0] == item:
+                return tup[1]
+        return 0
+
+    def __contains__(self, item):
+        """Return True if the given item is in this histogram, or False"""
+        for tup in self:
+            if tup[0] == item:
+                return True
+        return False
+
+    def _index(self, target):
+        """Return the index of the (target, count) entry if found, or None"""
+        for index, item in enumerate(self):
+            if item == target:
+                return index
 
 if __name__ == '__main__':
     # calculate time to create a histogram
