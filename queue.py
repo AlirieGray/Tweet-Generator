@@ -17,6 +17,11 @@ class Queue(LinkedList):
         self.head = self.head.next
         return temp
 
+    def peek(self):
+        if self.is_empty():
+            raise IndexError("Cannot peek from empty queue")
+        return self.head.data
+
 if __name__ == '__main__':
     Q = Queue(["Hello", "world,", "I", "am", "a", "queue!"])
     while not Q.is_empty():

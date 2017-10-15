@@ -3,8 +3,7 @@ import util
 import re
 import random
 from datetime import datetime
-
-## current issues: gets stuck in loop, repeats sentences directly from source ##
+from queue import Queue
 
 class Dictogram(dict):
     def __init__(self, source_text_file=None):
@@ -72,10 +71,43 @@ class Dictogram(dict):
             #    break
         return(" ".join(generated))
 
+class SecondOrderDictogram(dict):
+    def __init__(self, source_text_file=None):
+        self.types = 0  # the number of distinct item types in this histogram
+        self.tokens = 0  # the total count of all item tokens in this histogram
+        if source_text_file:
+            # first, read in the file and normalize the string
+            list_of_words = util.read_in_file(source_text_file)
+            normal_list = util.normalized_list(list_of_words)
+
+            Q = Queue() # stores the current word and the previous two
+            first = ""
+            for index, item in enumerate(normal_list):
+                Q.enqueue(item)
+
+                if Q.length() > 2:
+                    if first == "":
+                        first = Q.dequeue()
+                    else:
+                        first = second
+                    second = Q.dequeue()
+                    window = (first, second)
+                    print(str(window) + Q.peek())
+
+
+
 if __name__ == '__main__':
-    start = datetime.now()
-    blue = Dictogram('blue.txt')
-    print("Time to create Dictogram: " + str(datetime.now() - start))
-    print(blue.generate_sentence(10))
-    start = datetime.now()
-    print("Time to generate 10-word sentence: " + str(datetime.now() - start))
+    # start = datetime.now()
+    # blue = Dictogram('blue.txt')
+    # print("Time to create Dictogram: " + str(datetime.now() - start))
+    # print(blue.generate_sentence(10))
+    # start = datetime.now()
+    # print("Time to generate 10-word sentence: " + str(datetime.now() - start))
+
+
+    # test second-order Markov chain
+    fish = SecondOrderDictogram('fish.txt')
+
+
+
+    #
