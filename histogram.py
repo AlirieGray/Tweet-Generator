@@ -7,7 +7,7 @@ class Histogram(list):
 
     def __init__(self, iterable=None):
         """Initialize this histogram as a new list; update with given items"""
-        super(Listogram, self).__init__()
+        super(Histogram, self).__init__()
         self.types = 0  # the number of distinct item types in this histogram
         self.tokens = 0  # the total count of all item tokens in this histogram
         if iterable:
@@ -15,26 +15,30 @@ class Histogram(list):
 
     def update(self, iterable):
         """Update this histogram with the items in the given iterable"""
-
         # go through every item in the list to be added
         # each one is a new token
         for item in iterable:
-            self.tokens += 1
-            found = False
-            # check each tuple in the Listogram
-            for index, tup in enumerate(self):
-                # if the first item in the tuple is the word we are adding
-                # just update its count (the second index in the tuple)
-                # and early exit
-                if tup[0] == item:
-                    current = tup[1]
-                    self[index] = (item, current + 1)
-                    found = True
+            self.add(item)
+
+    def add(self, item):
+        # increment the number of tokens
+        self.tokens += 1
+        # check each tuple in the Listogram
+        found = False
+        for index, tup in enumerate(self):
+            # if the first item in the tuple is the word we are adding
+            # just update its count (the second index in the tuple)
+            # and early exit
+            if tup[0] == item:
+                current = tup[1]
+                self[index] = (item, current + 1)
+                found = True
             # otherwise, if we didn't find the item already in the Listogram
             # then just append it and increment the types count
-            if not found:
-                self.append((item, 1))
-                self.types += 1
+        if not found:
+            self.append((item, 1))
+            self.types += 1
+        # TODO: change to ranges list
 
 
     def count(self, item):
