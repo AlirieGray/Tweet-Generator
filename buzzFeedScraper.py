@@ -21,13 +21,11 @@ class Scraper:
         titles = []
         for elem in htmlTree.xpath('//*[@id="page_container"]/div/div[4]/ul/li'):
             for link in elem:
-                titles.append(link.text)
+                titles.append(link.text.lower())
         return titles
-
 
 
 if __name__ == '__main__':
     scraper = Scraper()
     tree = scraper.getFile('buzzfeed-archive-2014/01/01.html')
-
     print(scraper.getTitles(tree))

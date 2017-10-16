@@ -10,6 +10,7 @@ from queue import Queue
 # TODO: histogram in SecondOrderDictogram value is now a LISTogram,
 #   treat it accordingly !
 
+"""
 class Dictogram(dict):
     def __init__(self, source_text_file=None):
         self.start_words = []
@@ -74,40 +75,79 @@ class Dictogram(dict):
             #if next_word in self.end_words:
             #    break
         return(" ".join(generated))
+"""
 
-class SecondOrderDictogram(dict):
-    def __init__(self, source_text_file=None):
+class Dictogram(dict):
+    def __init__(self, source_text_file=None, order=2):
         if source_text_file:
             # first, read in the file and normalize the string
             list_of_words = util.read_in_file(source_text_file)
             normal_list = util.normalized_list(list_of_words)
 
-            Q = Queue() # stores the current word and the previous two
+            Q = Queue()
             first = ""
-            for index, item in enumerate(normal_list):
-                Q.enqueue(item)
+            if order == 1:
+                for index, item in enumerate(normal_list):
+                    Q.enqueue(item)
 
-                if Q.length() > 2:
-                    if first == "":
-                        first = Q.dequeue()
-                    else:
-                        first = second
-                    second = Q.dequeue()
-                    window = (first, second)
-                    print(str(window) + " " + Q.peek())
+                    if Q.length() > 1:
+                        if first == "":
+                            first = Q.dequeue()
+                        else:
+                            first = second
+                        second = Q.dequeue()
 
-                    if window in self:
+                        if not self.get(first):
+                            self[first] = Histogram()
+                        self[first].add(second)
+
+
+            elif order == 2:
+                for index, item in enumerate(normal_list):
+                    Q.enqueue(item)
+
+                    if Q.length() > 2:
+                        if first == "":
+                            first = Q.dequeue()
+                        else:
+                            first = second
+                        second = Q.dequeue()
+                        window = (first, second)
+
+                        if not self.get(window):
+                            self[window] = Histogram()
                         self[window].add(Q.peek())
-                    else:
-                        self[window] = Histogram()
 
     def print_self(self):
         for key, value in self.items():
             print(key)
             print(value)
 
-    def generate_sentence(self):
-        pass
+    def generate_sentence(self, sentence_length=10):
+        generated = []
+        # randomly select start word
+        start_word = random.choice(list(self.keys()))
+        generated.append(start_word)
+        current = start_word
+        while len(generated) < sentence_length:
+            new_word = self.next_word(current)
+            generated.append(new_word)
+            current = new_word
+        return " ".join(generated)
+
+    def next_word(self, word):
+        prev = 0
+        running_total = 0
+        random_integer = random.randint(0, self[word].tokens)
+
+        for pair in self[word]:
+            nextWord = pair[0]
+            prob = pair[1]
+            running_total += prob
+            if random_integer >= prev and random_integer < running_total:
+                return nextWord
+            prev = running_total
+
 
 
 if __name__ == '__main__':
@@ -120,9 +160,13 @@ if __name__ == '__main__':
 
 
     # test second-order Markov chain
-    fish = SecondOrderDictogram('fish.txt')
-    print()
+    fish = Dictogram('fish.txt', 1)
     fish.print_self()
+
+    # test first-order Markov chain
+    # blue = Dictogram('blue.txt', 1)
+
+    # print(blue.generate_sentence())
 
 
 
