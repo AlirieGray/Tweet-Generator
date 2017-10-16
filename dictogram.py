@@ -96,28 +96,49 @@ class Dictogram(dict):
                     self[tupleKey] = Histogram()
                 self[tupleKey].add(next_word)
 
+                # handle end of file
+                if j == len(normal_list) - 1:
+                    ls = []
+                    for word in tupleKey[(1 - order):]:
+                        ls.append(word)
+                    ls.append(normal_list[j])
+                    newKey = tuple(ls)
+                    if not self.get(newKey):
+                        self[newKey] = Histogram()
+                    self[newKey].add("STOP")
+
     def generate_sentence(self, sentence_length=10):
         generated = []
-        # randomly select start word
+        # randomly select start word and use it to determine the order
+        # of the Markov chain
+        # TODO: select only from words following start tokens
         start_word = random.choice(list(self.keys()))
         order = len(start_word)
-        # TODO: select only from words following start tokens
+
         generated.append(" ".join(start_word))
         current = start_word
+
         while len(generated) < sentence_length:
+            # if first order, we can just use the one-item tuple itself
+            # as the state to look up the next word
             if order == 1:
                 new_word = self.next_word(current)
                 current = new_word
+                if new_word == "STOP":
+                    return " ".join(generated)
+            # for a higher-order Markov chain, we have to determine the
+            # new state using the old state and the word we just generated
             else:
-                # get new state
                 new_state = []
-                for word in current[(-order + 1):]:
+                for word in current[(1 - order):]:
                     new_state.append(word)
                 new_word = self.next_word(current)
+                if new_word[0] == "STOP":
+                    return " ".join(generated)
                 new_state.append(new_word[0])
                 current = tuple(new_state)
-
             generated.append(" ".join(new_word))
+
         return " ".join(generated)
 
     def next_word(self, wordTuple):
@@ -150,7 +171,7 @@ if __name__ == '__main__':
 
 
     # test fist-order Markov chain
-    fish = Dictogram('fish.txt', 2)
+    fish = Dictogram('fish.txt', 1)
     fish.print_self()
     print(fish.generate_sentence())
 
