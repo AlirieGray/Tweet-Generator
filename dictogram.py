@@ -87,23 +87,18 @@ class Dictogram(dict):
             Q = Queue()
             first = ""
             if order == 1:
-                for index, item in enumerate(normal_list):
+                for item in normal_list:
                     Q.enqueue(item)
 
                     if Q.length() > 1:
-                        if first == "":
-                            first = Q.dequeue()
-                        else:
-                            first = second
-                        second = Q.dequeue()
-
-                        if not self.get(first):
-                            self[first] = Histogram()
-                        self[first].add(second)
+                        current = Q.dequeue()
+                        if not self.get(current):
+                            self[current] = Histogram()
+                        self[current].add(Q.peek())
 
 
             elif order == 2:
-                for index, item in enumerate(normal_list):
+                for item in normal_list:
                     Q.enqueue(item)
 
                     if Q.length() > 2:
@@ -127,6 +122,7 @@ class Dictogram(dict):
         generated = []
         # randomly select start word
         start_word = random.choice(list(self.keys()))
+        # TODO: select only from words following start tokens
         generated.append(start_word)
         current = start_word
         while len(generated) < sentence_length:
@@ -138,16 +134,15 @@ class Dictogram(dict):
     def next_word(self, word):
         prev = 0
         running_total = 0
-        random_integer = random.randint(0, self[word].tokens)
+        random_integer = random.randint(1, self[word].tokens)
 
         for pair in self[word]:
             nextWord = pair[0]
             prob = pair[1]
             running_total += prob
-            if random_integer >= prev and random_integer < running_total:
+            if random_integer > prev and random_integer <= running_total:
                 return nextWord
             prev = running_total
-
 
 
 if __name__ == '__main__':
@@ -159,14 +154,14 @@ if __name__ == '__main__':
     # print("Time to generate 10-word sentence: " + str(datetime.now() - start))
 
 
-    # test second-order Markov chain
-    fish = Dictogram('fish.txt', 1)
-    fish.print_self()
+    # test fist-order Markov chain
+    # fish = Dictogram('fish.txt', 1)
+    # fish.print_self()
+    # print(fish.generate_sentence())
 
-    # test first-order Markov chain
-    # blue = Dictogram('blue.txt', 1)
+    blue = Dictogram('blue.txt', 1)
 
-    # print(blue.generate_sentence())
+    print(blue.generate_sentence())
 
 
 
