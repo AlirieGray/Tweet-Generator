@@ -7,8 +7,6 @@ from queue import Queue
 
 # TODO: increase probability of end-sentence token the longer the
 #   generated sentence grows
-# TODO: histogram in SecondOrderDictogram value is now a LISTogram,
-#   treat it accordingly !
 
 """
 class Dictogram(dict):
@@ -78,45 +76,25 @@ class Dictogram(dict):
 """
 
 class Dictogram(dict):
-    def __init__(self, source_text_file=None, order=2):
+    def __init__(self, source_text_file, order):
         if source_text_file:
             # first, read in the file and normalize the string
             list_of_words = util.read_in_file(source_text_file)
             normal_list = util.normalized_list(list_of_words)
-
             Q = Queue()
-            first = ""
-            if order == 1:
-                for item in normal_list:
-                    Q.enqueue(item)
 
-                    if Q.length() > 1:
-                        current = Q.dequeue()
-                        if not self.get(current):
-                            self[current] = Histogram()
-                        self[current].add(Q.peek())
+            for i in range(0, order):
+                Q.enqueue(normal_list[i])
+            for j in range(order, len(normal_list) - 1):
+                tupleKey = Q.toTuple()
+                Q.dequeue()
+                next_word = normal_list[j]
+                Q.enqueue(next_word)
 
-
-            elif order == 2:
-                for item in normal_list:
-                    Q.enqueue(item)
-
-                    if Q.length() > 2:
-                        if first == "":
-                            first = Q.dequeue()
-                        else:
-                            first = second
-                        second = Q.dequeue()
-                        window = (first, second)
-
-                        if not self.get(window):
-                            self[window] = Histogram()
-                        self[window].add(Q.peek())
-
-    def print_self(self):
-        for key, value in self.items():
-            print(key)
-            print(value)
+                # add the new word to the histogram
+                if not self.get(tupleKey):
+                    self[tupleKey] = Histogram()
+                self[tupleKey].add(next_word)
 
     def generate_sentence(self, sentence_length=10):
         generated = []
@@ -131,18 +109,29 @@ class Dictogram(dict):
             current = new_word
         return " ".join(generated)
 
-    def next_word(self, word):
+    def next_word(self, wordTuple):
+        order = len(wordTuple)
         prev = 0
         running_total = 0
-        random_integer = random.randint(1, self[word].tokens)
+        random_integer = random.randint(1, self[wordTuple].tokens)
 
-        for pair in self[word]:
+        for pair in self[wordTuple]:
             nextWord = pair[0]
             prob = pair[1]
             running_total += prob
             if random_integer > prev and random_integer <= running_total:
-                return nextWord
+                # if first order, then we can just look up the next word
+                # based on only the word selected
+                if order == 1:
+                    return (nextWord,)
+                # otherwise, create a tuple based on the state
+
             prev = running_total
+
+    def print_self(self):
+        for key, value in self.items():
+            print(key)
+            print(value)
 
 
 if __name__ == '__main__':
@@ -155,13 +144,13 @@ if __name__ == '__main__':
 
 
     # test fist-order Markov chain
-    # fish = Dictogram('fish.txt', 1)
-    # fish.print_self()
-    # print(fish.generate_sentence())
+    fish = Dictogram('fish.txt', 1)
+    fish.print_self()
+    print(fish.generate_sentence())
 
-    blue = Dictogram('blue.txt', 1)
+    #blue = Dictogram('blue.txt', 1)
 
-    print(blue.generate_sentence())
+    #print(blue.generate_sentence())
 
 
 

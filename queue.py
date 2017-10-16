@@ -22,7 +22,16 @@ class Queue(LinkedList):
             raise IndexError("Cannot peek from empty queue")
         return self.head.data
 
+    def toTuple(self):
+        qList = []
+        current = self.head
+        while current:
+            qList.append(current.data)
+            current = current.next
+        return tuple(qList)
+
 if __name__ == '__main__':
     Q = Queue(["Hello", "world,", "I", "am", "a", "queue!"])
+    print(Q.toTuple())
     while not Q.is_empty():
         print(Q.dequeue())
