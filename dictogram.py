@@ -85,7 +85,7 @@ class Dictogram(dict):
 
             for i in range(0, order):
                 Q.enqueue(normal_list[i])
-            for j in range(order, len(normal_list) - 1):
+            for j in range(order, len(normal_list)):
                 tupleKey = Q.toTuple()
                 Q.dequeue()
                 next_word = normal_list[j]
@@ -100,17 +100,27 @@ class Dictogram(dict):
         generated = []
         # randomly select start word
         start_word = random.choice(list(self.keys()))
+        order = len(start_word)
         # TODO: select only from words following start tokens
-        generated.append(start_word)
+        generated.append(" ".join(start_word))
         current = start_word
         while len(generated) < sentence_length:
-            new_word = self.next_word(current)
-            generated.append(new_word)
-            current = new_word
+            if order == 1:
+                new_word = self.next_word(current)
+                current = new_word
+            else:
+                # get new state
+                new_state = []
+                for word in current[(-order + 1):]:
+                    new_state.append(word)
+                new_word = self.next_word(current)
+                new_state.append(new_word[0])
+                current = tuple(new_state)
+
+            generated.append(" ".join(new_word))
         return " ".join(generated)
 
     def next_word(self, wordTuple):
-        order = len(wordTuple)
         prev = 0
         running_total = 0
         random_integer = random.randint(1, self[wordTuple].tokens)
@@ -120,11 +130,7 @@ class Dictogram(dict):
             prob = pair[1]
             running_total += prob
             if random_integer > prev and random_integer <= running_total:
-                # if first order, then we can just look up the next word
-                # based on only the word selected
-                if order == 1:
-                    return (nextWord,)
-                # otherwise, create a tuple based on the state
+                return (nextWord,)
 
             prev = running_total
 
@@ -144,7 +150,7 @@ if __name__ == '__main__':
 
 
     # test fist-order Markov chain
-    fish = Dictogram('fish.txt', 1)
+    fish = Dictogram('fish.txt', 2)
     fish.print_self()
     print(fish.generate_sentence())
 
