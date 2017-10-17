@@ -45,6 +45,7 @@ class Dictogram(dict):
         # randomly select start word and use it to determine the order
         # of the Markov chain
         # TODO: select only from words following start tokens
+        # TODO: add stop tokens
         start_word = random.choice(list(self.keys()))
         order = len(start_word)
 

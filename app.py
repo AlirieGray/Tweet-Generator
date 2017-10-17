@@ -1,8 +1,6 @@
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
-from histogram import Histogram
-import util
 import time
 import json
 app = Flask(__name__, instance_relative_config=True)
@@ -10,8 +8,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-marx_buzz = Dictogram('corpus.txt')
+mx = Dictogram('corpus.txt', 1)
 
+# databse model for Tweet
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.String(200), unique=True)
@@ -22,11 +21,12 @@ class Tweet(db.Model):
     def __repr__(self):
         return '<Tweet %r>' % self.content
 
+# home route
 @app.route('/', methods=['GET', 'POST'])
 def hello():
     if request.method == 'GET':
         num = request.args.get('num', default = 15, type = int)
-        tweet = marx_buzz.generate_sentence(num)
+        tweet = mx.generate_sentence(num)
         # keep track of the current tweet in case a user favorites it
         global currentTweet
         currentTweet = tweet
@@ -35,6 +35,7 @@ def hello():
         addFavoriteTweet(currentTweet)
         return render_template('index.html', tweet=currentTweet, time=time.time)
 
+# display favorites
 @app.route('/favorites', methods=['GET'])
 def fav():
     # try to get content of tweets in db

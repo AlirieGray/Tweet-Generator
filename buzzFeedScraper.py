@@ -28,15 +28,16 @@ class Scraper:
     # appends the list of titles to the specified file
     # each title becomes a sentence
     def writeOutFile(self, titlesList, writeOutFileName):
-        f = open(writeOutFileName, "a+")
+        f = open(writeOutFileName, "w")
         for title in titlesList:
-            f.write(title + ". ");
+            f.write(title + ".\n");
         f.close()
 
 if __name__ == '__main__':
     scraper = Scraper()
     tree = scraper.getFile('buzzfeed-archive-2014/01/01.html')
     titles = scraper.getTitles(tree)
+    """
     marx = open('marx.txt', 'r')
     finalFile = open('corpus.txt', 'a+')
     finalFile.write(marx.read())
@@ -52,6 +53,7 @@ if __name__ == '__main__':
     finalFile.close()
 
 """
+
     dirString = 'buzzfeed-archive-2014/01/'
     directory = os.fsencode(dirString)
     i = 0
@@ -63,5 +65,8 @@ if __name__ == '__main__':
             tree = scraper.getFile(filepath)
             titles = scraper.getTitles(tree)
             scraper.writeOutFile(titles, 'titles_' + str(i))
-"""
+
+
+
+
     #
