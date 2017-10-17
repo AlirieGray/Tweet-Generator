@@ -40,7 +40,7 @@ class Dictogram(dict):
                         self[newKey] = Histogram()
                     self[newKey].add("STOP")
 
-    def generate_sentence(self, sentence_length=10):
+    def generate_sentence(self, sentence_length=15):
         generated = []
         # randomly select start word and use it to determine the order
         # of the Markov chain

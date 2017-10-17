@@ -10,8 +10,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-blue_dictogram = Dictogram('blue.txt')
-#print(blue_dictogram['big'])
+marx_buzz = Dictogram('corpus.txt')
 
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -27,7 +26,7 @@ class Tweet(db.Model):
 def hello():
     if request.method == 'GET':
         num = request.args.get('num', default = 15, type = int)
-        tweet = blue_dictogram.generate_sentence(num)
+        tweet = marx_buzz.generate_sentence(num)
         # keep track of the current tweet in case a user favorites it
         global currentTweet
         currentTweet = tweet
