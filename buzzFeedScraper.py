@@ -1,6 +1,7 @@
 """ Scrapes the tiles from an html page containing a list of BuzzFeed articles """
 from lxml import etree
 from io import StringIO, BytesIO
+import os
 
 class Scraper:
     def __init__(self):
@@ -24,8 +25,33 @@ class Scraper:
                 titles.append(link.text.lower())
         return titles
 
+    # appends the list of titles to the specified file
+    # each title becomes a sentence
+    def writeOutFile(self, titlesList, writeOutFileName):
+        f = open(writeOutFileName, "a+")
+        for title in titlesList:
+            f.write(title + ". ");
+        f.close()
 
 if __name__ == '__main__':
     scraper = Scraper()
     tree = scraper.getFile('buzzfeed-archive-2014/01/01.html')
-    print(scraper.getTitles(tree))
+    titles = scraper.getTitles(tree)
+
+
+    scraper.writeOutFile(titles, 'test.txt')
+
+    dirString = 'buzzfeed-archive-2014/01/'
+    directory = os.fsencode(dirString)
+    i = 0
+    for file in os.listdir(directory):
+        i += 1
+        filename = os.fsdecode(file)
+        if filename.endswith('.html'):
+            filepath = (os.path.join(dirString, filename))
+            tree = scraper.getFile(filepath)
+            titles = scraper.getTitles(tree)
+            scraper.writeOutFile(titles, 'titles_' + str(i))
+
+
+    #
