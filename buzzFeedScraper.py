@@ -22,7 +22,7 @@ class Scraper:
         titles = []
         for elem in htmlTree.xpath('//*[@id="page_container"]/div/div[4]/ul/li'):
             for link in elem:
-                titles.append(link.text.lower())
+                titles.append(link.text)
         return titles
 
     # appends the list of titles to the specified file

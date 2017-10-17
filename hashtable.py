@@ -90,11 +90,12 @@ class HashTable(object):
         # worst case: O(n) (item is at the end of the list)
         # best case: O(1) (item is at the head of the list)
         found = bucket.find(lambda item: item[0] == key)
-        if not found:
-            raise KeyError("Key not present")
-            return
+
         # return the found value (constant time)
-        return found[1]
+        if found:
+            return found[1]
+
+        raise KeyError("Cannot get key {} not in table".format(key))
 
     def set(self, key, value):
         """Insert or update the given key with its associated value"""
@@ -115,6 +116,10 @@ class HashTable(object):
         # otherwise, add the new tuple using the linked list append function
         bucket.append((key, value))
 
+        # if self.contains(key):
+        #     self.delete(key)
+        # bucket.append((key, value))
+
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError"""
         # hash the key to find its index in the list of buckets and store
@@ -127,12 +132,13 @@ class HashTable(object):
         # best case: O(1) (item is at the head of the list)
         found = bucket.find(lambda item: item[0] == key)
         # if the key is not present, throw a KeyError
-        if not found:
-            raise KeyError("Key not present")
+        if found:
+            bucket.delete(found)
         # otherwise, use the linked list delete method to remove the item
+        #
         else:
-            val = found[1]
-            bucket.delete((key, val))
+            raise KeyError("Could not find key {} to delete".format(key))
+
 
 def test_hash_table():
     ht = HashTable()

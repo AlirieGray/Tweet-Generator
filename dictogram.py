@@ -2,6 +2,7 @@ from histogram import Histogram
 import util
 import re
 import random
+from operator import itemgetter
 from datetime import datetime
 from queue import Queue
 
@@ -10,6 +11,8 @@ from queue import Queue
 
 class Dictogram(dict):
     def __init__(self, source_text_file, order):
+        self.order = order
+        self.start_words = []
         if source_text_file:
             # first, read in the file and normalize the string
             list_of_words = util.read_in_file(source_text_file)
@@ -22,12 +25,17 @@ class Dictogram(dict):
                 tupleKey = Q.toTuple()
                 Q.dequeue()
                 next_word = normal_list[j]
+
                 Q.enqueue(next_word)
 
                 # add the new word to the histogram
                 if not self.get(tupleKey):
                     self[tupleKey] = Histogram()
                 self[tupleKey].add(next_word)
+
+                if next_word == "[STOP]":
+                    Q = Queue()
+                    j += order
 
                 # handle end of file
                 if j == len(normal_list) - 1:
@@ -39,6 +47,7 @@ class Dictogram(dict):
                     if not self.get(newKey):
                         self[newKey] = Histogram()
                     self[newKey].add("[STOP]")
+                    return
 
     def generate_sentence(self, sentence_length=30):
         generated = []
@@ -46,8 +55,8 @@ class Dictogram(dict):
         # of the Markov chain
         # TODO: select only from words following start tokens
         # TODO: add stop tokens
-        start_word = random.choice(list(self.keys()))
-        order = len(start_word)
+        order = self.order
+        start_word = random.choice(self.start_words)
 
         generated.append(" ".join(start_word))
         current = start_word
@@ -93,17 +102,6 @@ class Dictogram(dict):
 
             prev = running_total
 
-    def get_start_words(self, order=1):
-        if order == 1:
-            return self[('[STOP]',)]
-        else:
-            start_words = []
-            for key, value in self.items():
-                if key[0] == '[STOP]':
-                    start_words.append(value[0])
-            return start_words
-
-
     def print_self(self):
         for key, value in self.items():
             print(key)
@@ -127,6 +125,7 @@ if __name__ == '__main__':
 
     mx = Dictogram('corpus.txt', 1)
     print(mx.generate_sentence())
+    print(mx.start_words)
 
 
     #
