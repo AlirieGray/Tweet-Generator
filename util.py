@@ -18,20 +18,16 @@ def read_in_file(filename): # TODO can normalize string in this function (?)
 
 def normalized_list(text):
     return_string = ' '.join(text)
-    return_string = re.sub(r'[0-9]+', '', return_string)
     #return_string = re.sub(r'[\]]+', '', return_string)
     #return_string = re.sub(r'[\[]+', '', return_string)
-    #return_string = re.sub(r'[\(]+', '', return_string)
-    #return_string = re.sub(r'[\)]+', '', return_string)
+    return_string = re.sub(r'[\(]+', '', return_string)
+    return_string = re.sub(r'[\)]+', '', return_string)
     return_string = re.sub(r'[*]+', '', return_string)
     return_string = re.sub(r'[\']+', ' ', return_string)
     return_string = re.sub(r'[_*]+', '', return_string)
     return_string = re.sub(r'[\"]+', '', return_string)
-    #return_string = re.sub(r'[,]+', '', return_string)
-    #return_string = re.sub(r'[.]+', '', return_string)
-    return_string = re.sub(r'[;]+', '', return_string)
-    return_string = re.sub(r'[?]+', '', return_string)
-    return return_string.lower().split(' ')
+    return_string = re.sub(r'[.]+', ' [STOP] ', return_string)
+    return return_string.split(' ')
 
 # take in a histogram in dictionary format and writes a new file with each
 # word and its frequency on a new line

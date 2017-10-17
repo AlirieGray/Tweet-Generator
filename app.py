@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
+import util
 import json
 app = Flask(__name__, instance_relative_config=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
@@ -25,7 +26,7 @@ class Tweet(db.Model):
 @app.route('/', methods=['GET', 'POST'])
 def hello():
     if request.method == 'GET':
-        num = request.args.get('num', default = 15, type = int)
+        num = request.args.get('num', default = 30, type = int)
         tweet = mx.generate_sentence(num)
         # keep track of the current tweet in case a user favorites it
         global currentTweet

@@ -38,9 +38,9 @@ class Dictogram(dict):
                     newKey = tuple(ls)
                     if not self.get(newKey):
                         self[newKey] = Histogram()
-                    self[newKey].add("STOP")
+                    self[newKey].add("[STOP]")
 
-    def generate_sentence(self, sentence_length=15):
+    def generate_sentence(self, sentence_length=30):
         generated = []
         # randomly select start word and use it to determine the order
         # of the Markov chain
@@ -58,8 +58,9 @@ class Dictogram(dict):
             if order == 1:
                 new_word = self.next_word(current)
                 current = new_word
-                if new_word == "STOP":
-                    return " ".join(generated)
+                if new_word[0] == "[STOP]":
+                    generated[0] = generated[0].title()
+                    return " ".join(generated) + "."
             # for a higher-order Markov chain, we have to determine the
             # new state using the old state and the word we just generated
             else:
@@ -67,8 +68,9 @@ class Dictogram(dict):
                 for word in current[(1 - order):]:
                     new_state.append(word)
                 new_word = self.next_word(current)
-                if new_word[0] == "STOP":
-                    return " ".join(generated)
+                if new_word[0] == "[STOP]":
+                    generated[0] = generated[0].title()
+                    return " ".join(generated) + "."
                 new_state.append(new_word[0])
                 current = tuple(new_state)
             generated.append(" ".join(new_word))
