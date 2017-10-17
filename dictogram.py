@@ -59,6 +59,7 @@ class Dictogram(dict):
                 new_word = self.next_word(current)
                 current = new_word
                 if new_word[0] == "[STOP]":
+                    # sentence formatting
                     generated[0] = generated[0].title()
                     return " ".join(generated) + "."
             # for a higher-order Markov chain, we have to determine the
@@ -69,6 +70,7 @@ class Dictogram(dict):
                     new_state.append(word)
                 new_word = self.next_word(current)
                 if new_word[0] == "[STOP]":
+                    # sentence formatting
                     generated[0] = generated[0].title()
                     return " ".join(generated) + "."
                 new_state.append(new_word[0])
@@ -90,6 +92,17 @@ class Dictogram(dict):
                 return (nextWord,)
 
             prev = running_total
+
+    def get_start_words(self, order=1):
+        if order == 1:
+            return self[('[STOP]',)]
+        else:
+            start_words = []
+            for key, value in self.items():
+                if key[0] == '[STOP]':
+                    start_words.append(value[0])
+            return start_words
+
 
     def print_self(self):
         for key, value in self.items():
@@ -114,7 +127,6 @@ if __name__ == '__main__':
 
     mx = Dictogram('corpus.txt', 1)
     print(mx.generate_sentence())
-
 
 
     #
