@@ -37,10 +37,21 @@ if __name__ == '__main__':
     scraper = Scraper()
     tree = scraper.getFile('buzzfeed-archive-2014/01/01.html')
     titles = scraper.getTitles(tree)
+    marx = open('marx.txt', 'r')
+    finalFile = open('corpus.txt', 'a+')
+    finalFile.write(marx.read())
+    marx.close()
+    dirString = 'Titles/'
+    directory = os.fsencode(dirString)
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        filepath = (os.path.join(dirString, filename))
+        titleFile = open(filepath)
+        finalFile.write(titleFile.read())
+        titleFile.close()
+    finalFile.close()
 
-
-    scraper.writeOutFile(titles, 'test.txt')
-
+"""
     dirString = 'buzzfeed-archive-2014/01/'
     directory = os.fsencode(dirString)
     i = 0
@@ -52,6 +63,5 @@ if __name__ == '__main__':
             tree = scraper.getFile(filepath)
             titles = scraper.getTitles(tree)
             scraper.writeOutFile(titles, 'titles_' + str(i))
-
-
+"""
     #

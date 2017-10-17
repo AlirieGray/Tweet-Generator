@@ -104,13 +104,13 @@ if __name__ == '__main__':
 
 
     # test fist-order Markov chain
-    fish = Dictogram('fish.txt', 1)
-    fish.print_self()
-    print(fish.generate_sentence())
+    # fish = Dictogram('fish.txt', 1)
+    # fish.print_self()
+    # print(fish.generate_sentence())
 
-    #blue = Dictogram('blue.txt', 1)
 
-    #print(blue.generate_sentence())
+    mx = Dictogram('corpus.txt', 1)
+    print(mx.generate_sentence())
 
 
 
