@@ -29,6 +29,8 @@ class Dictogram(dict):
                 if start_sentence:
                     start_sentence = False
                     self.start_words.append(tupleKey)
+                    j += 1
+
                 Q.dequeue()
                 next_word = normal_list[j]
 
@@ -45,7 +47,7 @@ class Dictogram(dict):
 
                     for k in range(1, order + 1):
                         j += k
-                        if j < len(normal_list) -1 :
+                        if j < len(normal_list):
                             Q.enqueue(normal_list[j])
 
                 # handle end of file
@@ -129,14 +131,14 @@ if __name__ == '__main__':
 
 
     # test fist-order Markov chain
-    fish = Dictogram('fish.txt', 1)
-    fish.print_self()
-    print(fish.start_words)
-    print(fish.generate_sentence())
+    # fish = Dictogram('fish.txt', 1)
+    # fish.print_self()
+    # print(fish.start_words)
+    # print(fish.generate_sentence())
 
 
-    #mx = Dictogram('corpus.txt', 1)
-    #print(mx.generate_sentence())
+    mx = Dictogram('corpus.txt', 1)
+    print(mx.generate_sentence())
     # print(mx.start_words)
 
 
