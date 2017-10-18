@@ -18,11 +18,17 @@ class Dictogram(dict):
             list_of_words = util.read_in_file(source_text_file)
             normal_list = util.normalized_list(list_of_words)
             Q = Queue()
+            start_sentence = True
 
+            # start by adding the first word(s) to the queue
             for i in range(0, order):
                 Q.enqueue(normal_list[i])
+            # then loop through the remaining words
             for j in range(order, len(normal_list)):
                 tupleKey = Q.toTuple()
+                if start_sentence:
+                    start_sentence = False
+                    self.start_words.append(tupleKey)
                 Q.dequeue()
                 next_word = normal_list[j]
 
@@ -35,7 +41,12 @@ class Dictogram(dict):
 
                 if next_word == "[STOP]":
                     Q = Queue()
-                    j += order
+                    start_sentence = True
+
+                    for k in range(1, order + 1):
+                        j += k
+                        if j < len(normal_list) -1 :
+                            Q.enqueue(normal_list[j])
 
                 # handle end of file
                 if j == len(normal_list) - 1:
@@ -118,14 +129,15 @@ if __name__ == '__main__':
 
 
     # test fist-order Markov chain
-    # fish = Dictogram('fish.txt', 1)
-    # fish.print_self()
-    # print(fish.generate_sentence())
+    fish = Dictogram('fish.txt', 1)
+    fish.print_self()
+    print(fish.start_words)
+    print(fish.generate_sentence())
 
 
-    mx = Dictogram('corpus.txt', 1)
-    print(mx.generate_sentence())
-    print(mx.start_words)
+    #mx = Dictogram('corpus.txt', 1)
+    #print(mx.generate_sentence())
+    # print(mx.start_words)
 
 
     #
