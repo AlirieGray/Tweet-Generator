@@ -23,21 +23,7 @@ class Histogram(list):
     def add(self, item):
         # increment the number of tokens
         self.tokens += 1
-        # check each tuple in the Listogram
         self.increment_frequency(item)
-        # for index, tup in enumerate(self):
-        #     # if the first item in the tuple is the word we are adding
-        #     # just update its count (the second index in the tuple)
-        #     # and early exit
-        #     if tup[0] == item:
-        #         current = tup[1]
-        #         self[index] = (item, current + 1)
-        #         found = True
-        #     # otherwise, if we didn't find the item already in the Listogram
-        #     # then just append it and increment the types count
-        # if not found:
-        #     self.append((item, 1))
-        #     self.types += 1
 
     def increment_frequency(self, word, count=1):
         found = False

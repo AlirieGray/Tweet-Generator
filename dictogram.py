@@ -97,7 +97,10 @@ class Dictogram(dict):
                 if new_word[0] == "[STOP]":
                     # sentence formatting
                     generated[0] = generated[0].title()
-                    return " ".join(generated) + "."
+                    if new_word.endswith("!") or new_word.endswith("?"):
+                        return " ".join(generated)
+                    else:
+                        return " ".join(generated) + "."
                 new_state.append(new_word[0])
                 current = tuple(new_state)
 
