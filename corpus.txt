@@ -41,7 +41,7 @@ Now, in what does this conflict consist?
 
 Before capitalist production, the system of petty industry obtained generally, based upon the private property of the laborers in their means of production; in the country, the agriculture of the small peasant, freeman, or serf; in the towns, the handicrafts organized in guilds. The instruments of labor — land, agricultural implements, the workshop, the tool — were the instruments of labor of single individuals, adapted for the use of one worker, and, therefore, of necessity, small, dwarfish, circumscribed. But, for this very reason, they belonged as a rule to the producer himself. To concentrate these scattered, limited means of production, to enlarge them, to turn them into the powerful levers of production of the present day — this was precisely the historic role of capitalist production and of its upholder, the bourgeoisie. In the fourth section of Capital, Marx has explained in detail how since the 15th century this has been historically worked out through the three phases of simple co-operation, manufacture, and modern industry. But the bourgeoisie, as is shown there, could not transform these puny means of production into mighty productive forces without transforming them, at the same time, from means of production of the individual into social means of production only workable by a collectivity of men. The spinning wheel, the handloom, the blacksmith's hammer, were replaced by the spinning-machine, the power-loom, the steam-hammer; the individual workshop, by the factory implying the co-operation of hundreds and thousands of workmen. In like manner, production itself changed from a series of individual into a series of social acts, and the production from individual to social products. The yarn, the cloth, the metal articles that now come out of the factory were the joint product of many workers, through whose hands they had successively to pass before they were ready. No one person could say of them: "I made that; this is my product."
 
-But where, in a given society, the fundamental form of production is that spontaneous division of labor which creeps in gradually and not upon any preconceived plan, there the products take on the form of commodities, whose mutual exchange, buying and selling, enable the individual producers to satisfy their manifold wants. And this was the case in the Middle Ages. The peasant, e.g., sold to the artisan agricultural products and bought from him the products of handicraft. Into this society of individual producers, of commodity producers, the new mode of production thrust itself. In the midst of the old division of labor, grown up spontaneously and upon no definite plan, which had governed the whole of society, now arose division of labor upon a definite plan, as organized in the factory; side by side with individual production appeared social production. The products of both were sold in the same market, and, therefore, at prices at least approximately equal. But organization upon a definite plan was stronger than spontaneous division of labor. The factories working with the combined social forces of a collectivity of individuals produced their commodities far more cheaply than the individual small producers. Individual producers succumbed in one department after another. Socialized production revolutionized all the old methods of production. But its revolutionary character was, at the same time, so little recognized that it was, on the contrary, introduced as a means of increasing and developing the production of commodities. When it arose, it found ready-made, and made liberal use of, certain machinery for the production and exchange of commodities: merchants' capital, handicraft, wage-labor. Socialized production thus introducing itself as a new form of the production of commodities, it was a matter of course that under it the old forms of appropriation remained in full swing, and were applied to its products as well.
+But where, in a given society, the fundamental form of production is that spontaneous division of labor which creeps in gradually and not upon any preconceived plan, there the products take on the form of commodities, whose mutual exchange, buying and selling, enable the individual producers to satisfy their manifold wants. And this was the case in the Middle Ages. The peasant sold to the artisan agricultural products and bought from him the products of handicraft. Into this society of individual producers, of commodity producers, the new mode of production thrust itself. In the midst of the old division of labor, grown up spontaneously and upon no definite plan, which had governed the whole of society, now arose division of labor upon a definite plan, as organized in the factory; side by side with individual production appeared social production. The products of both were sold in the same market, and, therefore, at prices at least approximately equal. But organization upon a definite plan was stronger than spontaneous division of labor. The factories working with the combined social forces of a collectivity of individuals produced their commodities far more cheaply than the individual small producers. Individual producers succumbed in one department after another. Socialized production revolutionized all the old methods of production. But its revolutionary character was, at the same time, so little recognized that it was, on the contrary, introduced as a means of increasing and developing the production of commodities. When it arose, it found ready-made, and made liberal use of, certain machinery for the production and exchange of commodities: merchants' capital, handicraft, wage-labor. Socialized production thus introducing itself as a new form of the production of commodities, it was a matter of course that under it the old forms of appropriation remained in full swing, and were applied to its products as well.
 
 In the medieval stage of evolution of the production of commodities, the question as to the owner of the product of labor could not arise. The individual producer, as a rule, had, from raw material belonging to himself, and generally his own handiwork, produced it with his own tools, by the labor of his own hands or of his family. There was no need for him to appropriate the new product. It belonged wholly to him, as a matter of course. His property in the product was, therefore, based upon his own labor. Even where external help was used, this was, as a rule, of little importance, and very generally was compensated by something other than wages. The apprentices and journeymen of the guilds worked less for board and wages than for education, in order that they might become master craftsmen themselves.
 
@@ -141,7 +141,7 @@ To accomplish this act of universal emancipation is the historical mission of th
 
 In the meantime, along with and after the French philosophy of the 18th century, had arisen the new German philosophy, culminating in Hegel.
 
-Its greatest merit was the taking up again of dialectics as the highest form of reasoning. The old Greek philosophers were all born natural dialecticians, and Aristotle, the most encyclopaedic of them, had already analyzed the most essential forms of dialectic thought. The newer philosophy, on the other hand, although in it also dialectics had brilliant exponents (e.g. Descartes and Spinoza), had, especially through English influence, become more and more rigidly fixed in the so-called metaphysical mode of reasoning, by which also the French of the 18th century were almost wholly dominated, at all events in their special philosophical work. Outside philosophy in the restricted sense, the French nevertheless produced masterpieces of dialectic. We need only call to mind Diderot's Le Neveu de Rameau, and Rousseau's Discours sur l'origine et les fondements de l'inegalite parmi less hommes. We give here, in brief, the essential character of these two modes of thought.
+Its greatest merit was the taking up again of dialectics as the highest form of reasoning. The old Greek philosophers were all born natural dialecticians, and Aristotle, the most encyclopaedic of them, had already analyzed the most essential forms of dialectic thought. The newer philosophy, on the other hand, although in it also dialectics had brilliant exponents (Descartes and Spinoza), had, especially through English influence, become more and more rigidly fixed in the so-called metaphysical mode of reasoning, by which also the French of the 18th century were almost wholly dominated, at all events in their special philosophical work. Outside philosophy in the restricted sense, the French nevertheless produced masterpieces of dialectic. We need only call to mind Diderot's Le Neveu de Rameau, and Rousseau's Discours sur l'origine et les fondements de l'inegalite parmi less hommes. We give here, in brief, the essential character of these two modes of thought.
 
 When we consider and reflect upon Nature at large, or the history of mankind, or our own intellectual activity, at first we see the picture of an endless entanglement of relations and reactions, permutations and combinations, in which nothing remains what, where and as it was, but everything moves, changes, comes into being and passes away. We see, therefore, at first the picture as a whole, with its individual parts still more or less kept in the background; we observe the movements, transitions, connections, rather than the things that move, combine, and are connected. This primitive, naive but intrinsically correct conception of the world is that of ancient Greek philosophy, and was first clearly formulated by Heraclitus: everything is and is not, for everything is fluid, is constantly changing, constantly coming into being and passing away.[A]
 
@@ -151,11 +151,11 @@ To the metaphysician, things and their mental reflexes, ideas, are isolated, are
 
 At first sight, this mode of thinking seems to us very luminous, because it is that of so-called sound commonsense. Only sound commonsense, respectable fellow that he is, in the homely realm of his own four walls, has very wonderful adventures directly he ventures out into the wide world of research. And the metaphysical mode of thought, justifiable and necessary as it is in a number of domains whose extent varies according to the nature of the particular object of investigation, sooner or later reaches a limit, beyond which it becomes one-sided, restricted, abstract, lost in insoluble contradictions. In the contemplation of individual things, it forgets the connection between them; in the contemplation of their existence, it forgets the beginning and end of that existence; of their repose, it forgets their motion. It cannot see the woods for the trees.
 
-For everyday purposes, we know and can say, e.g., whether an animal is alive or not. But, upon closer inquiry, we find that his is, in many cases, a very complex question, as the jurists know very well. They have cudgelled their brains in vain to discover a rational limit beyond which the killing of the child in its mother's womb is murder. It is just as impossible to determine absolutely the moment of death, for physiology proves that death is not an instantaneous, momentary phenomenon, but a very protracted process.
+For everyday purposes, we know and can say whether an animal is alive or not. But, upon closer inquiry, we find that his is, in many cases, a very complex question, as the jurists know very well. They have cudgelled their brains in vain to discover a rational limit beyond which the killing of the child in its mother's womb is murder. It is just as impossible to determine absolutely the moment of death, for physiology proves that death is not an instantaneous, momentary phenomenon, but a very protracted process.
 
 In like manner, every organized being is every moment the same and not the same; every moment, it assimilates matter supplied from without, and gets rid of other matter; every moment, some cells of its body die and others build themselves anew; in a longer or shorter time, the matter of its body is completely renewed, and is replaced by other molecules of matter, so that every organized being is always itself, and yet something other than itself.
 
-Further, we find upon closer investigation that the two poles of an antithesis, positive and negative, e.g., are as inseparable as they are opposed, and that despite all their opposition, they mutually interpenetrate. And we find, in like manner, that cause and effect are conceptions which only hold good in their application to individual cases; but as soon as we consider the individual cases in their general connection with the universe as a whole, they run into each other, and they become confounded when we contemplate that universal action and reaction in which causes and effects are eternally changing places, so that what is effect here and now will be cause there and then, and vice versa.
+Further, we find upon closer investigation that the two poles of an antithesis, positive and negative, are as inseparable as they are opposed, and that despite all their opposition, they mutually interpenetrate. And we find, in like manner, that cause and effect are conceptions which only hold good in their application to individual cases; but as soon as we consider the individual cases in their general connection with the universe as a whole, they run into each other, and they become confounded when we contemplate that universal action and reaction in which causes and effects are eternally changing places, so that what is effect here and now will be cause there and then, and vice versa.
 
 None of these processes and modes of thought enters into the framework of metaphysical reasoning. Dialectics, on the other hand, comprehends things and their representations, ideas, in their essential connection, concatenation, motion, origin and ending. Such processes as those mentioned above are, therefore, so many corroborations of its own method of procedure.
 
@@ -874,7 +874,7 @@ hbo denies "true blood" movie rumors.
 mormon church says leaders, facilities will not be used for same-sex marriages.
 7 car hacks that will change your life.
 40 movies that define los angeles.
-what happened to the actors who played cavin on "the gummi bears"?.
+what happened to the actors who played cavin on "the gummi bears"?
 7 sexy things guys do without realizing it.
 9 celebrity tweets you missed today.
 yes, my new year’s goal is to get in shape.
@@ -999,7 +999,7 @@ transgender love story: arin and katie break up.
 the nhs have released a new video encouraging people not to go to a & e for non-emergencies.
 the 17 cutest ways to start your day.
 if liz lemon and leslie knope co-hosted the golden globes.
-which part of take me out are you?.
+which part of take me out are you?
 everything we know about emma watson’s new rugby player boyfriend.
 the dangerous human.
 something quite delightful happened during david attenborough’s reddit ama.
@@ -1008,7 +1008,7 @@ a 24-step guide to falling in love, as written by two 8-year-old girls.
 french president françois hollande threatens legal action over claims of affair.
 and now we know when “game of thrones” season 4 will hit uk screens.
 these grandfathers getting married might just make you well up.
-how geordie are you?.
+how geordie are you?
 happy birthday iphone. here are 8 things you killed!.
 which animal is happiest on a trampoline? a highly scientific investigation.
 if these celebrity couples had stayed together this is what their children might have looked like.
@@ -1020,7 +1020,7 @@ the 52 stages of a vegas trip.
 duck selfie picture.
 watch this incredible footage of wind toppling a ton of new houses.
 hot male actors at every age.
-how much nudity is there really on "girls"?.
+how much nudity is there really on "girls"?
 miley cyrus would be proud of this parody.
 12 delicious snacks that you will never have the joy of eating again….
 squidward tentacles explains why being single is actually the best.
@@ -1069,7 +1069,7 @@ video of ellen degeneres giving portia de rossi a christmas present will give yo
 someone sent a letter to “the independent” written on a piece of ham.
 3 exciting ways to add whole grains to your breakfast.
 16 monstrosities from the world’s worst waxwork museum.
-why do israelis think sharon was the last prime minister who could bring them peace?.
+why do israelis think sharon was the last prime minister who could bring them peace?
 ariel sharon, former israeli prime minister, is dead.
 woody allen’s estranged family reacts to director’s golden globe lifetime achievement award.
 10 classic film heroines who are role models for our time.
@@ -1224,7 +1224,7 @@ batman will be coming to fox’s "gotham" after all.
 the 9 most unexpected animal sounds.
 the 23 cutest couples at the golden globes.
 jesse tyler ferguson donating $10k to australian marriage equality fight.
-what’s your cheese horoscope?.
+what’s your cheese horoscope?
 “white people crazy” is the rap anthem you’ve been waiting for.
 emma thompson was secretly but not so secretly the best part of the golden globes.
 10 comics that capture the anxiety of graduation.
@@ -1287,7 +1287,7 @@ the "shaun of the dead" guide to london.
 “downton abbey” was incredibly upsetting last night.
 the story behind this beautiful photo of maya angelou and amiri baraka dancing.
 clearly the best way to have watched the golden globes.
-what does your favorite breakfast food say about you?.
+what does your favorite breakfast food say about you?
 the definitive guide to finding the right dead fish on tinder.
 10 diy ways to brighten up winter.
 patrick stewart’s "star trek" and pizza mashup video is straight up genius.
@@ -1447,7 +1447,7 @@ tell us about yourself: aubrey peeples.
 19 questions new yorkers ask when visiting los angeles.
 25 reasons rihanna is the king of instagram replies.
 new york post columnist calls newtown shooting a "little convenient massacre".
-which muppet are you?.
+which muppet are you?
 10 best colleges for social butterflies.
 the 2013 national book critics circle award finalists have been announced.
 wendy williams pulled a martha stewart and uploaded pictures of questionable looking food.
@@ -1473,15 +1473,15 @@ there’s an ostrich on the run in tunbridge wells.
 elephant rolls car: elephant attack caught on camera.
 12 new year’s resolutions to put on your big girl panties.
 justin bieber adds a couple more tattoos to his collection.
-what cancelled tv show should be brought back?.
+what cancelled tv show should be brought back?
 21 questions russian people are sick of answering.
 dc mean tweets: "paul ryan is satan incarnate".
 how michael b. jordan became hollywood’s newest breakout star.
-can you tell which one is the real channel 5 documentary?.
+can you tell which one is the real channel 5 documentary?
 the definitive cycle of online dating.
 stunning footage shows london in the ’20s versus london now.
 why emma watson’s golden globes outfit confused everyone.
-how london are you?.
+how london are you?
 cornered muslim brotherhood rails against referendum in egypt.
 pastor does a quick sermon.
 14 cats that are way geekier than you.
@@ -1493,7 +1493,7 @@ richard madden’s game of would you rather is almost as shocking as "game of th
 the former editor of “the new york times” criticised a cancer patient for blogging about her illness.
 why outkast’s reunion can’t come too soon.
 this sherlock musical will help tide you over until the next season.
-is this what holden caulfield looks like?.
+is this what holden caulfield looks like?
 the 19 types of old-school rave casualty.
 abercrombie’s cfo ascends to position of power behind the scenes.
 10 routines from dance moms with powerful themes.
@@ -1507,7 +1507,7 @@ there is an app which will quit your job for you.
 the "sherlock" finale as an 8-bit video game.
 20 things you didn’t know about "pulp fiction".
 children of glass - documentary.
-can you tell the difference between real vice headlines and fake ones?.
+can you tell the difference between real vice headlines and fake ones?
 "what if google was a guy" is a hilarious sketch that skewers our internet habits.
 28 songs that will make you miss the 1990s.
 passion + right tools = productivity & happiness. the 6 books that reveal the new “secret of success”.
@@ -1543,7 +1543,7 @@ brazil’s “rolezinhos” may be the latest threat to world cup security.
 10 tips to live longer.
 a definitive ranking of all 50 original jelly belly flavours.
 25 foods you probably haven’t eaten since you were a kid.
-why weren’t there any black musicians at the top of the singles chart last year?.
+why weren’t there any black musicians at the top of the singles chart last year?
 everything you ever needed to know about “the selfie,” history included.
 fat chick relaxes on cat!.
 9 celebrity tweets you missed today.
@@ -1558,7 +1558,7 @@ yahoo’s chief operating officer is out.
 this 200-year-old book is also an animated painting.
 if your favorite literary icons had dating profiles.
 how ford’s new f-150 could change the pickup truck game.
-what is your preferred dipping sauce?.
+what is your preferred dipping sauce?
 u.s. olympics head draws criticism for warning athletes against protests at sochi.
 democratic congressman confronts white house chief of staff over obamacare messaging.
 16 british chocolates that will make you want to move to the u.k. immediately.
@@ -1578,7 +1578,7 @@ the oxford comma is extremely important and everyone should be using it.
 aol is wiping patch off its books.
 5 dangerous words for a brit in the usa.
 store cameras can tell if shoppers are pissed off or happy.
-is leonardo dicaprio god walking among us?.
+is leonardo dicaprio god walking among us?
 this man has taken over 2,000 striking polaroid pictures of celebrities.
 russia accuses eu of "aggressive propaganda of homosexual love".
 colorado’s media shield law could become stronger after the jana winter ruling.
@@ -1589,7 +1589,7 @@ the definitive ranking of chips.
 12 signs you’re deadpool.
 pyruvate dehydrogenase complex deficiency (pdcd) - mystery diagnosis.
 the 10 best beyoncé & jay z pictures.
-do you know what fans of these celebrities call themselves?.
+do you know what fans of these celebrities call themselves?
 21 signs you were raised by a television.
 36 white people who need to be stopped.
 the 11 different types of capitol hill staffers.
@@ -1599,7 +1599,7 @@ republican congressman: judges who support same-sex marriage need "basic plumbin
 "veronica mars" star jason dohring takes a return trip to neptune.
 there is a store in la for time travelers.
 this great great grandma hired a stripper to help celebrate her 100th birthday.
-what does susan boyle look like playing bag-pipes?.
+what does susan boyle look like playing bag-pipes?
 8 things you learn to appreciate after moving back home.
 donor to jeff denham’s congressional campaigns on trial for child molestation charge.
 the 11 worst things tech interns have messed up.
@@ -1625,13 +1625,13 @@ this is what the tigers of thailand are actually thinking.
 exclusive: egypt observers report ballot stuffing, bribes in constitution vote.
 16 random jelly belly combinations that totally work.
 christie joins long list of past american figures to use most famous non-apology apology.
-abraham lincoln: saint or sinner?.
+abraham lincoln: saint or sinner?
 this beautiful note was left by a grieving widower hoping to pay for a young couple’s meal.
 meet olivier giroud, the really, really ridiculously good-looking soccer player.
 fogpocalypse in new york city.
 moving images of the baby miraculously pulled from the rubble of a bombing, now safe at home.
 10 factual reasons why cats rule.
-how hull are you?.
+how hull are you?
 28 things that people with big boobs can simply never do.
 an acclaimed cartoonist, on why she needed to quit comics and comedy.
 gleeks around the world, stop. time to ‘love’ the season 3 graduates even more.
@@ -1660,7 +1660,7 @@ jack dorsey says the receipt is untapped “canvas” and “publishing medium�
 lena dunham is on the cover of vogue.
 this is the only jennifer lawrence impression you need to see.
 26 food swaps to make you healthier.
-who is the most underrated actor in hollywood?.
+who is the most underrated actor in hollywood?
 30 awful things about riding public transportation every day.
 senate intelligence committee: benghazi attack was preventable.
 the woman who couldn’t stop burping - mystery diagnosis.
@@ -1684,7 +1684,7 @@ the 10 stupidest things you should never say to a wheelchair user.
 in objection of the hipster beard trend.
 why hbo’s "looking" is the honest gay series we’ve been waiting for.
 13 of the weirdest rush hour crushes from metro.
-could this be the greatest celebrity fitness video ever?.
+could this be the greatest celebrity fitness video ever?
 if one direction were bald.
 17 horrifying middle class injuries.
 whoa, robert downey jr. can sing.
@@ -1771,7 +1771,7 @@ president obama’s vacation is better than yours.
 all the months, ranked from worst to best.
 these people know exactly what’s important when it comes to riding out a blizzard.
 so moffat filmed a fake scene for the "sherlock" premiere.
-did you know celine dion has her own personal $72 million water park mansion?.
+did you know celine dion has her own personal $72 million water park mansion?
 those things miley cyrus said about beyoncé aren’t real.
 10 things that need to retire in 2014.
 california supreme court rules undocumented immigrant can receive law license.
@@ -1782,7 +1782,7 @@ an egyptian puppet has actually been accused of being a secret terrorist.
 the 7 stages of watching law & order svu.
 12 rolling stone covers that immortalized 2004 in pop culture.
 chris christie sent a very christie christmas card to iowa republicans.
-is this the most attractive photo of matthew lewis ever taken?.
+is this the most attractive photo of matthew lewis ever taken?
 jamaican dancehall star sizzla banned from music festival for anti-gay lyrics.
 four-year-old girl belts out adorable cover of "let it go" from disney’s "frozen".
 why i fell in love with harry styles.
@@ -1825,7 +1825,7 @@ the 18 online beauty shops you need in your life.
 this comic understands your google paranoia.
 one theory behind nest’s jaw-dropping valuation.
 "imitation of life" actress juanita moore dies at 99.
-does being cold make you sick?.
+does being cold make you sick?
 author george saunders: “holding out a high vision of what art is supposed to do”.
 29 breathtaking photos from hockey’s snowtastic winter classic.
 the 7 most viral photos on imgur in 2013.
@@ -1833,7 +1833,7 @@ prince william takes a royal selfie with a 12-year-old.
 rihanna hosted a luxurious new years party.
 miley cyrus and ryan seacrest kissed each other at the ball drop.
 6 revelations from nigella lawson’s first tv interview since "mortifying" court case.
-why is mindy kaling on tinder?.
+why is mindy kaling on tinder?
 kaley cuoco got married in a pink wedding dress.
 12 spectacular acts of wikipedia vandalism.
 the most expensive children’s clothes in the world.
@@ -1848,7 +1848,7 @@ the 37 most ’00s things that have ever happened.
 17 delightful pictures of benedict cumberbatch as a young man.
 28 beautiful quotes about libraries.
 9 reasons you are already breaking your new year’s resolution.
-how irish are you?.
+how irish are you?
 21 things that inevitably happen when you work in an office.
 12 beautiful glass sculptures of things that could kill you.
 a reddit user has recreated iconic movie scenes using his boss’s dog.
@@ -1869,7 +1869,7 @@ up close footage of a sailfish in action.
 the first selfies of 2014.
 russian research ship stuck in antarctic ice for two weeks finally free.
 15 stages of finding out you are gluten intolerant.
-world’s greatest head massage?.
+world’s greatest head massage?
 ranking the 13 most important celeb ponytails of the ’90s.
 ke$ha enters rehab to treat an eating disorder.
 the 15 best parts of being single in your thirties.
@@ -1884,7 +1884,7 @@ this picture of joe jonas, bald and with a cat shows a wonderful future for the 
 the 15 most memorable television proposals.
 14 reasons why tom haverford is a marketing and public relations guru.
 the first official “veronica mars” movie trailer is everything you dreamed it would be.
-are you a psychopath?.
+are you a psychopath?
 pastor andrew hamblin would rather die or go to jail than give up handling snakes.
 16 reasons you should be rooting for the seattle seahawks to win the super bowl.
 18 celebrity instagrams you need to see this week.
@@ -1922,13 +1922,13 @@ president obama wants to expand gun buyer background checks on the mentally ill.
 eric bana: dilf on a beach.
 a man has been having a hilariously close friendship with applebee’s facebook page for months now.
 8 reasons why working from home is the worst.
-how do animals sound in other languages?.
-is it just me or has no one noticed the background ppl behind jennifer lawrence in this gif?.
+how do animals sound in other languages?
+is it just me or has no one noticed the background ppl behind jennifer lawrence in this gif?
 7 questions mtv’s “girl code” had about lesbians.
 22 powerful images by dreamers: a window into life as an undocumented immigrant in america.
 24 invaluable skills to learn for free online this year.
 this guy is turning himself into a real live gap mannequin.
-quiz: which disney prince is your true love?.
+quiz: which disney prince is your true love?
 19 reasons rapunzel and flynn rider are the best disney couple.
 read your way to an awesome 2014.
 the documentary “blackfish” is causing more major problems for seaworld.
@@ -1961,7 +1961,7 @@ here’s adam scott talking at length about pooping your pants.
 tv confidential archives: show no. 214 with guests lenny venito and simon templeman.
 sorry, not sorry.
 to thine own self be (sometimes) true.
-does twitter know ezra klein’s next move?.
+does twitter know ezra klein’s next move?
 whose line is it anyway? a quiz on quotes from famous books.
 your mental sorbet: garth brooks - allentown / goodnight saigon - kennedy center honors billy joel.
 23 reasons zoe hart and wade need to get back together.
@@ -1974,7 +1974,7 @@ same-sex couples urge supreme court to let utah weddings continue during appeal.
 24 next level bonkers science gifs.
 big three automakers have disappointing december, but sell over 7 million in 2013.
 31 healthy and delicious ways to cook with chia seeds.
-which "will & grace" character are you?.
+which "will & grace" character are you?
 36 genius ways to hide the eyesores in your home.
 celebrate the “downton abbey” season 4 premiere in the most grantham way possible.
 see the alleged ufo spotted over california on new year’s eve.
@@ -1987,7 +1987,7 @@ jennifer hudson bought her assistant a house and he reacted appropriately.
 17 things to look forward to now that the holidays are over.
 the only gif you need to see today.
 omg, these talking eggs.
-who will replace thomas roberts on msnbc at 11 o’clock?.
+who will replace thomas roberts on msnbc at 11 o’clock?
 justin bieber and selena gomez spotted on segways together.
 morrissey: “i see no difference between eating meat and paedophilia”.
 this is the most inspirational video of a hamburger you’ll ever see.
@@ -2022,7 +2022,7 @@ here’s what happens when you get adults to do a school science test.
 this man keeps getting arrested because he’s addicted to drinking petrol.
 british national party leader nick griffin declared bankrupt.
 16 reasons why you secretly love tom daley’s "splash!".
-which s club 7 member are you?.
+which s club 7 member are you?
 the most followed artists on twitter & the real reasons why people do.
 proof that the demon from "paranormal activity" obviously had a super crush on every single person.
 5 buzzfeed lists that (shockingly) don’t exist.
@@ -2030,7 +2030,7 @@ call it a comeback: colts storm back to stun chiefs in playoff opener.
 8 things i learned during my solo adventure to paris.
 new york will loosen its marijuana laws, according to report.
 living in new york as a child vs as an adult.
-is the nsa spying on you?.
+is the nsa spying on you?
 rob ford “best mayor ever” pot legal money not? and more!.
 danny dyer hits out at homophobic comments on twitter!.
 12 signs you were in an a capella group.
@@ -2088,10 +2088,10 @@ why 2014 won’t be the year for new immigration laws.
 23 questions left unanswered in “cry baby”.
 kim kardashian and blac chyna show off their best assets.
 18 photos that prove sparklers are a must at your wedding.
-how cold are you?.
+how cold are you?
 18 reasons why you want marshall eriksen from "how i met your mother" to be your best friend.
 14 corgis that don’t care it isn’t comic-con.
-when is it ok to ask whether a public figure is gay?.
+when is it ok to ask whether a public figure is gay?
 your group of friends as told by the characters of ‘toy story’.
 how to grieve for a life that never began.
 13 problems only uncoordinated people understand.
@@ -2127,10 +2127,10 @@ stefon from snl’s weekend update discusses his trip to rome.
 why game of thrones needs to be back on my tv now.
 a science teacher lost 37 pounds after eating nothing but mcdonald’s.
 idris elba has a complicated and sexual relationship with bow ties.
-are justin bieber and selena gomez back together again?.
+are justin bieber and selena gomez back together again?
 25 things that happen when you’re 25.
 19 animals who can’t believe their eyes right now.
-which “oc” character are you?.
+which “oc” character are you?
 the most embarrassing moments of a girl’s life from ages 14 to 40.
 29 unexpectedly awesome things about being pregnant.
 14 alternate "catcher in the rye" covers.
@@ -2167,7 +2167,7 @@ michael bay made the most awkward stage exit ever.
 top 8 resoluções de ano novo inspiradas em séries de tv.
 a large section of the midwest is currently colder than the south pole.
 this comic perfectly explains what white privilege is.
-how much is an original american girl doll worth?.
+how much is an original american girl doll worth?
 the 32 worst things about working in food.
 senate delays vote to extend unemployment benefits.
 there’s a charity campaign to make ice cube’s goodyear blimp a reality.
@@ -2273,7 +2273,7 @@ proof the guy from interpol only has a vague familiarity with the english langua
 distance makes the heart grow fonder.
 rejoice everyone, emma watson is single.
 the best news bloopers of 2013.
-remember when meredith vieira was super horny on "who wants to be a millionaire"?.
+remember when meredith vieira was super horny on "who wants to be a millionaire"?
 20 reasons a twentysomething would never survive “the hunger games”.
 steubenville teen convicted of rape released from juvenile detention after serving less than a year.
 17 magical lifehacks to learn from disney movies.
@@ -2285,7 +2285,7 @@ why i’m choking on the silver spoon.
 vine superstar nicholas megalis just came out with a new single you never knew you needed.
 what to look forward to now that the holidays are over.
 17 things you swore you’d never say when you had kids.
-did you know that if you google the word "freezing" the results are full of cartoon porn?.
+did you know that if you google the word "freezing" the results are full of cartoon porn?
 what this landmark obscenity trial says about british attitudes to pornography and the law.
 white house silence on benefits cuts irks veterans groups.
 29 signs you’re a warhammer player.
@@ -2450,7 +2450,7 @@ homemade safari: incredible drone footage of serengeti wildlife.
 15 things that really deserve the name “polar vortex”.
 31 things to warm your heart on this cold day.
 hockey player goes for late hit, knocks himself out.
-are your ready for the new season of pretty little liars?.
+are your ready for the new season of pretty little liars?
 a star trek fan spent $30,000 turning her basement into the starship enterprise.
 the coming collision between andrew cuomo and bill de blasio.
 one hundred years of weird fear.
@@ -2525,7 +2525,7 @@ here’s how people in muslim countries want women to dress in public.
 drew barrymore reminds the world that she’s hollywood’s original “quirky girl”.
 anti-abortion republicans are largely quiet as israel adopts liberal abortion law.
 justin timberlake said something sweet about jessica biel in his people’s choice awards speech.
-why do so many delicious foods start with the letter c?.
+why do so many delicious foods start with the letter c?
 so you want to give up red meat.
 30 signs you went to the university of new mexico.
 28 things you’re only afraid of if you live in chicago.
@@ -2533,7 +2533,7 @@ so you want to give up red meat.
 why jack frost and elsa would make the cutest couple.
 this sunny-side up egg is a better rapper than you.
 tisha campbell’s wedding video is the perfect portrait of black pop culture in the ’90s.
-did you know sylvia plath once went platinum blonde?.
+did you know sylvia plath once went platinum blonde?
 why “the secret garden” is one of the most depressing kids’ movies.
 25 beautiful quotes about snow.
 don’t share these photos of a frozen niagara falls, they’re old.
@@ -2542,7 +2542,7 @@ freelancing dreams vs reality.
 three abducted journalists in syria have been freed.
 15 photos that prove ja’mie king can do anything.
 this little girl’s request for a dragon came true.
-did “frontline” go too far?.
+did “frontline” go too far?
 30 times you wanted to smack the smug off the new england patriots’ faces.
 27 signs you suffer from shy girl syndrome.
 the most popular music of 2013 isn’t quite what you’d expect.
@@ -2622,7 +2622,7 @@ orlando bloom giggles like a cute little school girl….
 13 lies you believe until you examine your finances.
 facebook knows all your posting tricks — and how well they work.
 the 27 greatest things that could ever happen to a new yorker.
-were michelle rodriguez and cara delevingne really drunk at the knicks game?.
+were michelle rodriguez and cara delevingne really drunk at the knicks game?
 lake michigan has turned into a sea of ice balls.
 utah marriages of same-sex couples “on hold” pending appeal, governor’s office says.
 this us rap video filmed in north korea.
@@ -2643,7 +2643,7 @@ doug dorst: “it’s the physical fact of the book itself”.
 the year of the auter.
 warm your soul as beach-goers in california get snowballs thrown at them.
 chamber of commerce promises to make opponents pay come november.
-who owns walt whitman?.
+who owns walt whitman?
 kris jenner posts a full body bikini pic on instagram.
 louis ck one.
 21 cats who are secretly excellent readers.
@@ -2727,7 +2727,7 @@ looking at a tardis in a whole new way.
 10 things you never knew about new order’s "blue monday".
 24 early britney outfits you can’t unsee.
 24 ways you might be a hoarder.
-have you ever heard sir patrick stewart moo?.
+have you ever heard sir patrick stewart moo?
 harry reid just made a whole bunch of republicans angry over unemployment benefits.
 25 signs you went to nyu before it was trendy.
 egypt extends detention of four al jazeera journalists.
@@ -2746,7 +2746,7 @@ why getting a mortgage today is better than 40 years ago.
 2016 gop contenders and their biggest scandals to date.
 kraft’s earnings could melt from velveeta shortage.
 this is what the “polar vortex” really did to a lake michigan lighthouse.
-is it just me or are mormons not really that upset over the utah marriage ruling?.
+is it just me or are mormons not really that upset over the utah marriage ruling?
 38 of the most hilarious fast food sign fails lead the daily links.
 the 8 email mailing lists everyone hates the most.
 the chris christie bridge scandal, as explained by "game of thrones".
@@ -2764,8 +2764,8 @@ indian diplomat who was strip-searched is indicted by grand jury on visa fraud.
 in case you forgot, there is a harry potter character named elphias doge.
 watch this man call an entire herd of deer over for breakfast.
 7 epic winter weather experiments to spice up your snow day.
-instagram caption or philosophical quote?.
-what age are you, really?.
+instagram caption or philosophical quote?
+what age are you, really?
 naked alexander skarsgard sitting on things is the meme you’ve always wanted.
 gwyneth paltrow is selling overpriced organic sidewalk lemonade.
 if the cast of “parks and recreation” had amazon wishlists, they might look like this.
@@ -2785,7 +2785,7 @@ there’s an instagram account that pairs clothing with exhibits in art museums 
 watch a 9th grader give obama one of the best intros he’s ever had.
 politico calls christie “man who makes no apology” three minutes too late.
 staples accused of cutting employee hours ahead of obamacare.
-how many 95-year-olds do you know write songs about marriage equality?.
+how many 95-year-olds do you know write songs about marriage equality?
 this is how diamonds are made - documentary.
 these hunger games inspired wedding dresses will make you wish you were getting married asap.
 how microsoft’s ceo search is eerily similar to yahoo’s.
@@ -2821,7 +2821,7 @@ play the communication choose your own adventure.
 new jersey democrats who endorsed christie stand by their man.
 christie ally repeatedly takes 5th amendment during committee testimony on bridge scandal.
 proof that ian somerhalder and nina dobrev are the most perfect (not to mention sexiest) exes on the planet.
-can plants think?.
+can plants think?
 these beautiful photos show what niagara falls looks like when it actually freezes.
 bastille storm the british embassy.
 a guy made his girlfriend this amazing music video because she couldn’t go backpacking with him.
@@ -2856,7 +2856,7 @@ obama aide’s gambling gig makes trouble in london.
 ellen degeneres addresses your obsession with dry shampoo.
 new jersey gov. chris christie denies knowledge, involvement in bridge scandal.
 12 soothing pictures of white whales dancing with people.
-is the internet’s most baffling mystery about to be solved?.
+is the internet’s most baffling mystery about to be solved?
 12 easy versions of the hard new years resolutions you’re realizing you can’t keep.
 20 steps to living your life like lily tomlin.
 18 reasons you should switch to the menstrual cup.

@@ -9,7 +9,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-mx = Dictogram('corpus.txt', 1)
+mx = Dictogram('corpus.txt')
 
 # databse model for Tweet
 class Tweet(db.Model):
@@ -29,12 +29,12 @@ def hello():
         num = request.args.get('num', default = 30, type = int)
         tweet = mx.generate_sentence(num)
         # keep track of the current tweet in case a user favorites it
-        global currentTweet
-        currentTweet = tweet
-        return render_template('index.html', tweet=tweet, time=time.time)
+        global current_tweet
+        current_tweet = tweet
+        return render_template('index.html', tweet=tweet, time=time.time())
     elif request.method == 'POST':
-        addFavoriteTweet(currentTweet)
-        return render_template('index.html', tweet=currentTweet, time=time.time)
+        addFavoriteTweet(current_tweet)
+        return render_template('index.html', tweet=current_tweet, time=time.time())
 
 # display favorites
 @app.route('/favorites', methods=['GET'])
@@ -44,7 +44,7 @@ def fav():
     tweet_strings = []
     for tweet in tweets_list:
         tweet_strings.append(tweet.content)
-    return render_template('favorites.html', tweets=tweet_strings)
+    return render_template('favorites.html', tweets=tweet_strings, time=time.time())
 
 # add favorited tweet to the database
 def addFavoriteTweet(tweet_content):

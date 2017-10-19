@@ -4,10 +4,11 @@ import re
 import random
 from operator import itemgetter
 from datetime import datetime
-from queue import Queue
+#import Queue
+from Queue import Queue
 
-# TODO: increase probability of end-sentence token the longer the
-#   generated sentence grows
+# TODO: increase probability of end-sentence words (not stop token)
+# the longer the generated sentence grows
 
 class Dictogram(dict):
     def __init__(self, source_text_file, order=1):
@@ -17,26 +18,25 @@ class Dictogram(dict):
             # first, read in the file and normalize the string
             list_of_words = util.read_in_file(source_text_file)
             normal_list = util.normalized_list(list_of_words)
-            Q = Queue()
+            q = Queue()
             start_sentence = True
 
             # then loop through the remaining words
             for j in range(order, len(normal_list)):
-                if Q.length() != order:
-                    Q.enqueue(normal_list[j])
+                if q.length() != order:
+                    q.enqueue(normal_list[j])
                     continue
 
-                tuple_key = Q.toTuple()
-                #print(tuple_key)
+                tuple_key = q.toTuple()
 
                 if start_sentence:
                     start_sentence = False
                     self.start_words.append(tuple_key)
 
-                Q.dequeue()
+                q.dequeue()
                 next_word = normal_list[j]
 
-                Q.enqueue(next_word)
+                q.enqueue(next_word)
 
                 # add the new word to the histogram
                 if not self.get(tuple_key):
@@ -44,7 +44,7 @@ class Dictogram(dict):
                 self[tuple_key].add(next_word)
 
                 if next_word == "[STOP]":
-                    Q = Queue()
+                    q = Queue()
                     start_sentence = True
                     continue
 

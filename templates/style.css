@@ -1,5 +1,7 @@
-.container {
-  width: calc(100% - 4em);
-  max-width: 500px;
+.buttonContainer {
+  display: flex;
+}
+
+.tweetContainer {
   display: flex;
 }

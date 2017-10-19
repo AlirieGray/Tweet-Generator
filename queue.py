@@ -23,15 +23,15 @@ class Queue(LinkedList):
         return self.head.data
 
     def toTuple(self):
-        qList = []
+        q_list = []
         current = self.head
         while current:
-            qList.append(current.data)
+            q_list.append(current.data)
             current = current.next
-        return tuple(qList)
+        return tuple(q_list)
 
 if __name__ == '__main__':
-    Q = Queue(["Hello", "world,", "I", "am", "a", "queue!"])
-    print(Q.toTuple())
-    while not Q.is_empty():
-        print(Q.dequeue())
+    q = Queue(["Hello", "world,", "I", "am", "a", "queue!"])
+    print(q.toTuple())
+    while not q.is_empty():
+        print(q.dequeue())
