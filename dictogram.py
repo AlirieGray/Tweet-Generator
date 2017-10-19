@@ -4,11 +4,7 @@ import re
 import random
 from operator import itemgetter
 from datetime import datetime
-#import Queue
 from Queue import Queue
-
-# TODO: increase probability of end-sentence words (not stop token)
-# the longer the generated sentence grows
 
 class Dictogram(dict):
     def __init__(self, source_text_file, order=1):
@@ -76,9 +72,11 @@ class Dictogram(dict):
             # as the state to look up the next word
 
             if length_so_far > 10:
-                self[current].increment_frequency("[STOP]", 2)
+                if self[current].__contains__("[STOP]"):
+                    self[current].increment_frequency("[STOP]", 2)
             if length_so_far > 15:
-                self[current].increment_frequency("[STOP]", 5)
+                if self[current].__contains__("[STOP]"):
+                    self[current].increment_frequency("[STOP]", 5)
 
             if order == 1:
                 new_word = self.next_word(current)
