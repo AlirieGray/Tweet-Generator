@@ -10,7 +10,7 @@ from queue import Queue
 #   generated sentence grows
 
 class Dictogram(dict):
-    def __init__(self, source_text_file, order):
+    def __init__(self, source_text_file, order=1):
         self.order = order
         self.start_words = []
         if source_text_file:
@@ -26,12 +26,12 @@ class Dictogram(dict):
                     Q.enqueue(normal_list[j])
                     continue
 
-                tupleKey = Q.toTuple()
-                #print(tupleKey)
+                tuple_key = Q.toTuple()
+                #print(tuple_key)
 
                 if start_sentence:
                     start_sentence = False
-                    self.start_words.append(tupleKey)
+                    self.start_words.append(tuple_key)
 
                 Q.dequeue()
                 next_word = normal_list[j]
@@ -39,9 +39,9 @@ class Dictogram(dict):
                 Q.enqueue(next_word)
 
                 # add the new word to the histogram
-                if not self.get(tupleKey):
-                    self[tupleKey] = Histogram()
-                self[tupleKey].add(next_word)
+                if not self.get(tuple_key):
+                    self[tuple_key] = Histogram()
+                self[tuple_key].add(next_word)
 
                 if next_word == "[STOP]":
                     Q = Queue()
@@ -51,7 +51,7 @@ class Dictogram(dict):
                 # handle end of file
                 if j == len(normal_list) - 1:
                     ls = []
-                    for word in tupleKey[(1 - order):]:
+                    for word in tuple_key[(1 - order):]:
                         ls.append(word)
                     ls.append(normal_list[j])
                     newKey = tuple(ls)
@@ -64,16 +64,22 @@ class Dictogram(dict):
         generated = []
         # randomly select start word and use it to determine the order
         # of the Markov chain
-        # TODO: fix start token list
         order = self.order
         start_word = random.choice(self.start_words)
 
         generated.append(" ".join(start_word))
         current = start_word
+        length_so_far = 0
 
         while len(generated) < sentence_length:
             # if first order, we can just use the one-item tuple itself
             # as the state to look up the next word
+
+            if length_so_far > 10:
+                self[current].increment_frequency("[STOP]", 2)
+            if length_so_far > 15:
+                self[current].increment_frequency("[STOP]", 5)
+
             if order == 1:
                 new_word = self.next_word(current)
                 current = new_word
@@ -94,6 +100,8 @@ class Dictogram(dict):
                     return " ".join(generated) + "."
                 new_state.append(new_word[0])
                 current = tuple(new_state)
+
+            length_so_far += 1
             generated.append(" ".join(new_word))
 
         return " ".join(generated)
@@ -114,27 +122,27 @@ class Dictogram(dict):
 
     def print_self(self):
         for key, value in self.items():
-            print(key)
-            print(value)
+            print("key: " + str(key))
+            print("histogram: " + str(value))
 
 
 if __name__ == '__main__':
     # start = datetime.now()
-    # blue = Dictogram('blue.txt')
-    # print("Time to create Dictogram: " + str(datetime.now() - start))
-    # print(blue.generate_sentence(10))
+    # mx = Dictogram('corpus.txt')
+    # print("Time to create first-order Dictogram: " + str(datetime.now() - start))
     # start = datetime.now()
+    # print(mx.generate_sentence(10))
     # print("Time to generate 10-word sentence: " + str(datetime.now() - start))
 
 
     # test fist-order Markov chain
-    fish = Dictogram('fish.txt', 1)
-    #fish.print_self()
-    print(fish.start_words)
-    print(fish.generate_sentence())
+    # fish = Dictogram('fish.txt')
+    # fish.print_self()
+    # print("start words: " + str(fish.start_words))
+    # print(fish.generate_sentence())
 
 
-    mx = Dictogram('corpus.txt', 2)
+    mx = Dictogram('corpus.txt')
     print(mx.generate_sentence())
     #print(mx.start_words)
 
