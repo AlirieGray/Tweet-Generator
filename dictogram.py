@@ -68,9 +68,8 @@ class Dictogram(dict):
         length_so_far = 0
 
         while len(generated) < sentence_length:
-            # if first order, we can just use the one-item tuple itself
-            # as the state to look up the next word
-
+            # as the sentence grows longer, increase the probability of
+            # the stop token appearing
             if length_so_far > 10:
                 if self[current].__contains__("[STOP]"):
                     self[current].increment_frequency("[STOP]", 2)
@@ -78,6 +77,8 @@ class Dictogram(dict):
                 if self[current].__contains__("[STOP]"):
                     self[current].increment_frequency("[STOP]", 5)
 
+            # if first order, we can just use the one-item tuple itself
+            # as the state to look up the next word
             if order == 1:
                 new_word = self.next_word(current)
                 current = new_word
