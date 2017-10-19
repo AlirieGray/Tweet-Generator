@@ -20,16 +20,18 @@ class Dictogram(dict):
             Q = Queue()
             start_sentence = True
 
-            # start by adding the first word(s) to the queue
-            for i in range(0, order):
-                Q.enqueue(normal_list[i])
             # then loop through the remaining words
             for j in range(order, len(normal_list)):
+                if Q.length() != order:
+                    Q.enqueue(normal_list[j])
+                    continue
+
                 tupleKey = Q.toTuple()
+                #print(tupleKey)
+
                 if start_sentence:
                     start_sentence = False
                     self.start_words.append(tupleKey)
-                    j += 1
 
                 Q.dequeue()
                 next_word = normal_list[j]
@@ -44,11 +46,7 @@ class Dictogram(dict):
                 if next_word == "[STOP]":
                     Q = Queue()
                     start_sentence = True
-
-                    for k in range(1, order + 1):
-                        j += k
-                        if j < len(normal_list):
-                            Q.enqueue(normal_list[j])
+                    continue
 
                 # handle end of file
                 if j == len(normal_list) - 1:
@@ -66,8 +64,7 @@ class Dictogram(dict):
         generated = []
         # randomly select start word and use it to determine the order
         # of the Markov chain
-        # TODO: select only from words following start tokens
-        # TODO: add stop tokens
+        # TODO: fix start token list
         order = self.order
         start_word = random.choice(self.start_words)
 
@@ -131,15 +128,15 @@ if __name__ == '__main__':
 
 
     # test fist-order Markov chain
-    # fish = Dictogram('fish.txt', 1)
-    # fish.print_self()
-    # print(fish.start_words)
-    # print(fish.generate_sentence())
+    fish = Dictogram('fish.txt', 1)
+    #fish.print_self()
+    print(fish.start_words)
+    print(fish.generate_sentence())
 
 
-    mx = Dictogram('corpus.txt', 1)
+    mx = Dictogram('corpus.txt', 2)
     print(mx.generate_sentence())
-    # print(mx.start_words)
+    #print(mx.start_words)
 
 
     #
