@@ -1,25 +1,25 @@
 #!python3.6
 from flask import Flask, request, render_template
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
 app = Flask(__name__, instance_relative_config=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# db = SQLAlchemy(app)
 
 mx = Dictogram('corpus.txt')
 
-# databse model for Tweet
-class Tweet(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    content = db.Column(db.String(200), unique=True)
-
-    def __init__(self, content):
-        self.content = content
-
-    def __repr__(self):
-        return '<Tweet %r>' % self.content
+# database model for Tweet
+# class Tweet(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     content = db.Column(db.String(200), unique=True)
+#
+#     def __init__(self, content):
+#         self.content = content
+#
+#     def __repr__(self):
+#         return '<Tweet %r>' % self.content
 
 # home route
 @app.route('/', methods=['GET', 'POST'])
