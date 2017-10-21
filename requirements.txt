@@ -3,4 +3,4 @@ Flask==0.10
 gunicorn = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.6.2"
