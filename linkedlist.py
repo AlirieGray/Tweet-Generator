@@ -175,6 +175,8 @@ def test_linked_list():
     print('Appending items:')
     ll.append('A')
     print(ll)
+    ll.append('A')
+    print(ll)
     ll.append('B')
     print(ll)
     ll.append('C')
@@ -185,19 +187,21 @@ def test_linked_list():
     print('tail: ' + str(ll.tail))
     print('length: ' + str(ll.length()))
 
-    for i in ll.iterate():
-        print("Iterating " + i.data)
+    # for i in ll.iterate():
+    #     print("Iterating " + i)
 
     # Enable this after implementing delete:
     print('Deleting items:')
+    ll.delete('A')
+    print('deleted A')
+    ll.delete('A')
+    print('deleted A')
     ll.delete('B')
     print('deleted B')
     print(ll)
     ll.delete('C')
     print('deleted C')
     print(ll)
-    ll.delete('A')
-    print('deleted A')
     print(ll)
     print('head: ' + str(ll.head))
     print('tail: ' + str(ll.tail))

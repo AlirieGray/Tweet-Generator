@@ -35,32 +35,32 @@ class Scraper:
 
 if __name__ == '__main__':
     scraper = Scraper()
+    #
+    # dirString = 'buzzfeed-archive-2014/02/'
+    # directory = os.fsencode(dirString)
+    # i = 0
+    # for file in os.listdir(directory):
+    #     i += 1
+    #     filename = os.fsdecode(file)
+    #     if filename.endswith('.html'):
+    #         filepath = (os.path.join(dirString, filename))
+    #         tree = scraper.getFile(filepath)
+    #         titles = scraper.getTitles(tree)
+    #         scraper.writeOutFile(titles, 'titles_' + str(i))
 
-    marx = open('marx.txt', 'r')
-    finalFile = open('corpus.txt', 'a+')
-    finalFile.write(marx.read())
-    marx.close()
-    dirString = 'Titles/'
-    directory = os.fsencode(dirString)
-    for file in os.listdir(directory):
-        filename = os.fsdecode(file)
-        filepath = (os.path.join(dirString, filename))
-        titleFile = open(filepath)
-        finalFile.write(titleFile.read())
-        titleFile.close()
-    finalFile.close()
-
-    dirString = 'buzzfeed-archive-2014/01/'
-    directory = os.fsencode(dirString)
-    i = 0
-    for file in os.listdir(directory):
-        i += 1
-        filename = os.fsdecode(file)
-        if filename.endswith('.html'):
-            filepath = (os.path.join(dirString, filename))
-            tree = scraper.getFile(filepath)
-            titles = scraper.getTitles(tree)
-            scraper.writeOutFile(titles, 'titles_' + str(i))
+    # marx = open('marx.txt', 'r')
+    # finalFile = open('corpus.txt', 'a+')
+    # finalFile.write(marx.read())
+    # marx.close()
+    # dirString = 'Titles/'
+    # directory = os.fsencode(dirString)
+    # for file in os.listdir(directory):
+    #     filename = os.fsdecode(file)
+    #     filepath = (os.path.join(dirString, filename))
+    #     titleFile = open(filepath)
+    #     finalFile.write(titleFile.read())
+    #     titleFile.close()
+    # finalFile.close()
 
 
 
