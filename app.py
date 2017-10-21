@@ -1,9 +1,8 @@
+#!python3.6
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
-import util
-import json
 app = Flask(__name__, instance_relative_config=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

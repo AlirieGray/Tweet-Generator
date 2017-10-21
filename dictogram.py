@@ -1,9 +1,6 @@
 from histogram import Histogram
 import util
-import re
 import random
-from operator import itemgetter
-from datetime import datetime
 from Queue import Queue
 
 class Dictogram(dict):
@@ -129,12 +126,6 @@ class Dictogram(dict):
 
 
 if __name__ == '__main__':
-    # start = datetime.now()
-    # mx = Dictogram('corpus.txt')
-    # print("Time to create first-order Dictogram: " + str(datetime.now() - start))
-    # start = datetime.now()
-    # print(mx.generate_sentence(10))
-    # print("Time to generate 10-word sentence: " + str(datetime.now() - start))
 
 
     # test fist-order Markov chain
