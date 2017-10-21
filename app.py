@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 
 mx = Dictogram('corpus.txt')
 
-databse model for Tweet
+# databse model for Tweet
 class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     content = db.Column(db.String(200), unique=True)
