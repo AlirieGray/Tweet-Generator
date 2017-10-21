@@ -1,6 +1,6 @@
 #!python3.6
 from flask import Flask, request, render_template
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
 app = Flask(__name__, instance_relative_config=True)
