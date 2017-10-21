@@ -1,7 +1,7 @@
 from histogram import Histogram
 import util
 import random
-from Queue import Queue
+from qu import Queue
 
 class Dictogram(dict):
     def __init__(self, source_text_file, order=1):
