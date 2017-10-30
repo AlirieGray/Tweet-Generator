@@ -29,7 +29,7 @@ def normalized_list(text):
     return_string = re.sub(r'[\']+', '', return_string)
     return_string = re.sub(r'[.]+', ' [STOP]', return_string)
     return_string = re.sub(r'[?]+', ' [STOP]', return_string)
-    return return_string.split(' ')
+    return return_string.split(' ').lower()
 
 # take in a histogram in dictionary format and writes a new file with each
 # word and its frequency on a new line
