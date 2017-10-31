@@ -25,8 +25,7 @@ mx = Dictogram('corpus.txt')
 @app.route('/', methods=['GET', 'POST'])
 def hello():
     if request.method == 'GET':
-        num = request.args.get('num', default = 30, type = int)
-        tweet = mx.generate_sentence(num)
+        tweet = mx.generate_sentence()
         # keep track of the current tweet in case a user favorites it
         global current_tweet
         current_tweet = tweet
