@@ -1,10 +1,11 @@
 #!python3.6
+import os
 from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
 app = Flask(__name__, instance_relative_config=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
