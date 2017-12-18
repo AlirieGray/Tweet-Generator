@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
 app = Flask(__name__, instance_relative_config=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://gnrsejhrhrcohq:a526f0d193847989fbf0ab78beeadf7ff524e7595f304defc6b1a5cc99d9bb37@ec2-54-235-244-185.compute-1.amazonaws.com:5432/d9j2s2909jn7l'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
