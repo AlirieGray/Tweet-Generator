@@ -31,6 +31,8 @@ def normalized_list(text):
     return_string = re.sub(r'[?]+', ' [STOP]', return_string)
     return return_string.split(' ')
 
+
+
 # take in a histogram in dictionary format and writes a new file with each
 # word and its frequency on a new line
 def write_histogram_file(hist, new_file):
