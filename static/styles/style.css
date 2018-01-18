@@ -1,5 +1,5 @@
 body {
-  background-color: red;
+  background-color: rgb(149, 0, 0);
   font-family: 'opera-lyrics-smoothregular', Arial;
 }
 
@@ -21,7 +21,23 @@ body {
 }
 
 .btn {
-  
+  border-radius: 4px;
+  margin: 5px;
+  background-color: rgb(248,236,194);
+  padding: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: #3D341C;
+  font-weight: bold;
+  border: none;
+}
+
+.btn:active {
+  outline: 0px;
+}
+
+.btn:focus {
+  outline: 0px;
 }
 
 .tweet-container {
