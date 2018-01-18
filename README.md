@@ -8,3 +8,4 @@ The Marxist Markov chain was coded in Python. The project uses Flask for the bac
 - Update style
 - Fix database
 - Fix issue with stop tokens in Markov chain
+- Fix capitalization issues

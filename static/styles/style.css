@@ -29,11 +29,18 @@ body {
   padding-right: 7px;
   color: #3D341C;
   font-weight: bold;
-  border: none;
+  box-sizing: border-box;
+  border-width: 0px;
+  transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #FFF9E3;
 }
 
 .btn:active {
   outline: 0px;
+  box-shadow: inset 0px 0px 0px 1px black;
 }
 
 .btn:focus {
@@ -44,7 +51,12 @@ body {
   display: flex;
   flex-direction: row;
 }
-
+.bubble-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #talkbubble {
    width: 300px;
    display: flex;
