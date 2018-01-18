@@ -7,13 +7,14 @@
 </head>
 
 <body>
-  <div class="tweetContainer">
-    <p> {{tweet}} </p>
+  <div class="tweet-container">
+    <img src="static/the_boy.jpg" height=200px width=200px> 
+    <div id="talkbubble"> {{tweet}} </div>
   </div>
-    <form action="/" class="buttonContainer">
-      <button class="btn" formmethod="get"> Generate Tweet </button>
-      <button class="btn" formmethod="post"> Favorite </button>
-      <button class="btn" formmethod="get" formaction="/favorites"> See All Favorites </button>
+    <form action="/" class="button-container">
+      <button formmethod="get"> Generate </button>
+      <button formmethod="post"> Favorite </button>
+      <button formmethod="get" formaction="/favorites"> See All Favorites </button>
     </form>
 
   </div>
