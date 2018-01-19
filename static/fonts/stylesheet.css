@@ -2,13 +2,10 @@
 
 
 
-
-
-
 @font-face {
-    font-family: 'opera-lyrics-smoothregular';
-    src: url('opera-lyrics-smooth-webfont.woff2') format('woff2'),
-         url('opera-lyrics-smooth-webfont.woff') format('woff');
+    font-family: 'ds_fette_kanzleiregular';
+    src: url('dsfettekanzlei-webfont.woff2') format('woff2'),
+         url('dsfettekanzlei-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 

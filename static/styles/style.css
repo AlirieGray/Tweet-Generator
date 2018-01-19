@@ -3,16 +3,23 @@ body {
   font-family: 'opera-lyrics-smoothregular', Arial;
 }
 
+h1 {
+  font-family: cursive;
+  font-size: 3rem;
+}
+
 @font-face {
-    font-family: '18thcenturyregular';
-    src: url('../fonts/18thcentury-webfont.tff') format('tff');
-    src: url('../fonts/18thcentury-webfont.woff2') format('woff2'),
-         url('../fonts/18thcentury-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-family: 'opera-lyrics-smoothregular';
     src: url('../fonts/opera-lyrics-smooth-webfont.woff2') format('woff2'),
          url('../fonts/opera-lyrics-smooth-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ds_fette_kanzleiregular';
+  src: url('../fonts/dsfettekanzlei-webfont.woff2') format('woff2'),
+      url('../fonts/dsfettekanzlei-webfont.woff') format('woff');
 }
 
 .button-container {
@@ -49,6 +56,7 @@ body {
 .tweet-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .bubble-container {
   display: flex;
@@ -65,8 +73,9 @@ body {
    text-align: center;
    padding-left: 10px;
    padding-right: 10px;
+   line-height: 1.4rem;
    height: 200px;
-   background: white;
+   background: rgb(248,236,194);
    position: relative;
    -moz-border-radius:    80px;
    -webkit-border-radius: 80px;
@@ -80,6 +89,6 @@ body {
    width: 0;
    height: 0;
    border-top: 13px solid transparent;
-   border-right: 26px solid white;
+   border-right: 26px solid rgb(248,236,194);
    border-bottom: 13px solid transparent;
 }
