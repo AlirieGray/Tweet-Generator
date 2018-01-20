@@ -9,6 +9,11 @@ app = Flask(__name__, instance_relative_config=True)
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # db = SQLAlchemy(app)
 
+'''
+<button class="btn" formmethod="post"> Favorite </button>
+<button class="btn" formmethod="get" formaction="/favorites"> See All Favorites </button>
+'''
+
 mx = Dictogram('corpus.txt')
 
 # database model for Tweet
