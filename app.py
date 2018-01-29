@@ -5,12 +5,17 @@ from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
 app = Flask(__name__, instance_relative_config=True)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-print(os.environ['DATABASE_URL'])
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+print(os.environ.get('DATABASE_URL'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 mx = Dictogram('corpus.txt')
+
+'''
+<button class="btn" formmethod="post"> Favorite </button>
+<button class="btn" formmethod="get" formaction="/favorites"> See All Favorites </button>
+'''
 
 # database model for Tweet
 class Tweet(db.Model):
