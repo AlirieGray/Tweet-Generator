@@ -1,31 +1,27 @@
 #!python3.6
 import os
 from flask import Flask, request, render_template
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
 from dictogram import Dictogram
 import time
 app = Flask(__name__, instance_relative_config=True)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://gnrsejhrhrcohq:a526f0d193847989fbf0ab78beeadf7ff524e7595f304defc6b1a5cc99d9bb37@ec2-54-235-244-185.compute-1.amazonaws.com:5432/d9j2s2909jn7l'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# db = SQLAlchemy(app)
-
-'''
-<button class="btn" formmethod="post"> Favorite </button>
-<button class="btn" formmethod="get" formaction="/favorites"> See All Favorites </button>
-'''
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+print(os.environ['DATABASE_URL'])
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
 mx = Dictogram('corpus.txt')
 
 # database model for Tweet
-# class Tweet(db.Model):
-#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-#     content = db.Column(db.String(200), unique=True)
-#
-#     def __init__(self, content):
-#         self.content = content
-#
-#     def __repr__(self):
-#         return '<Tweet %r>' % self.content
+class Tweet(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    content = db.Column(db.String(200), unique=True)
+
+    def __init__(self, content):
+        self.content = content
+
+    def __repr__(self):
+        return '<Tweet %r>' % self.content
 
 # home route
 @app.route('/', methods=['GET', 'POST'])
